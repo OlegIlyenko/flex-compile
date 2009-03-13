@@ -1,0 +1,799 @@
+<html>
+<head>
+    <title>Flex Compile ${project.version} - Reference documentation</title>
+
+
+    <style type="text/css">
+        body {
+            font-family: Verdana, Tahoma, Arial;
+        }
+
+        .h {
+            vertical-align:top;
+            font-weight:bold;
+            text-align:right;
+            padding-right: 10px;
+            padding-top: 10px;
+        }
+
+        .v {
+            padding-top: 10px;
+        }
+
+        pre {
+            border: 1px solid #666666;;
+            color:#666666;
+            padding: 5px;
+        }
+
+        .desc {
+            color:#666666;
+            font-style:italic;
+        }
+
+        a {
+            text-decoration:none;
+            color:#cb0000;
+            cursor:pointer;
+        }
+
+        a:hover {
+            text-decoration:underline;
+        }
+
+        th {
+            background-color:#e8e8ba;
+        }
+
+        th, td {
+            border: 1px solid #9d9c9c;
+        }
+
+        table {
+            border: 1px solid #9d9c9c;
+        }
+
+        .headTable {
+            border:none
+        }
+
+        .headTable td {
+            border:none;
+        }
+
+        .note {
+            background-color:#ffff99;
+            padding:10px;
+        }
+    </style>
+
+</head>
+<body>
+<h1>Flex Compile ${project.version}</h1>
+
+<h2>Table of Contents</h2>
+
+<ol>
+    <li><a href="#over">Overview</a></li>
+    <li><a href="#prj">Flex project structure</a></li>
+    <li><a href="#server">Running the Server</a></li>
+    <li><a href="#client">Running the Client</a></li>
+    <li><a href="#maven">Using Maven 2 Plugin</a></li>
+    <li><a href="#filter">Using Compilation Filter</a></li>
+    <li><a href="#props">Sever properties</a></li>
+</ol>
+
+<h2 id="over">1. Overview</h2>
+
+<table class="headTable">
+    <tr>
+        <td class="h">Project:</td>
+        <td class="v">flex-compile</td>
+    </tr>
+    <tr>
+        <td class="h">Version:</td>
+        <td class="v">${project.version}</td>
+    </tr>
+    <tr>
+        <td class="h">Author:</td>
+        <td class="v">Oleg Ilyenko</td>
+    </tr>
+    <tr>
+        <td class="h">Modules:</td>
+        <td class="v">
+            flex-compile-server<br />
+            flex-compile-common<br />
+            flex-compile-client<br />
+            flex-compile-distribution<br />
+            flex-compile-maven2-plugin
+        </td>
+    </tr>
+    <tr>
+        <td class="h">Description:</td>
+        <td class="v">
+            <p>
+                This project is wrapper for the Flex Compiler API. It's makes compilation faster by using applications and libraries cache and by
+                performing compilation in the server. So Flex Compiler is held in the memory all the time.
+            </p>
+
+            <p>
+                In order to use <b>flex-compile</b> you should create simple flex project. See <a href="#prj">Flex project structure</a> for details.
+                So <b>flex-compile</b> can be used as simple flex project management tool.
+            </p>
+
+            <p>
+                Project also provides <b>Maven 2</b> integration. It can be also included to any web application as filter, so that flex project compilation
+                is made on fly. It dramatically simplifies and speeds up development productivity.
+            </p>
+
+            <p>
+                In order to see project in action you can start with provided example project.
+            </p>
+        </td>
+    </tr>
+</table>
+
+<h2 id="prj">2. Flex project structure</h2>
+
+<p>
+    Each flex project should have following file structure:
+<ul>
+    <li>
+        Project root
+        <ul>
+            <li>
+                component1
+                <ul>
+                    <li>lib<span class="desc"> - Flex libraries which are needed for the component (*.swc files)</span></li>
+                    <li>src<span class="desc"> - ActionScript sources</span></li>
+                    <li>mxml<span class="desc"> - MXML source files</span></li>
+                </ul>
+            </li>
+            <li>
+                component2
+                <ul>
+                    <li>lib</li>
+                    <li>src</li>
+                    <li>mxml</li>
+                </ul>
+            </li>
+            <li>
+                application1
+                <ul>
+                    <li>lib<span class="desc"> - Flex libraries which are needed for the application (*.swc files)</span></li>
+                    <li>src<span class="desc"> - ActionScript sources</span></li>
+                    <li>
+                        mxml<span class="desc"> - MXML source files</span>
+                        <ul>
+                            <li>App.mxml</li>
+                            <li>module.mxml</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>flex-project.xml</li>
+        </ul>
+    </li>
+</ul>
+</p>
+
+<p>
+    As you can see from structure, each Flex project should also contain project XML file. This file describes project's libraries (components), modules and applications.
+    The default name for the project descriptors is <b>flex-project.xml</b>. Here is the description of XML:
+    <pre>&lt;flex-project&gt;
+
+    &lt;!-- Project name --&gt;
+    &lt;name&gt;Test flex project&lt;/name&gt;
+
+    &lt;!-- Component definition. You can define as many components as you want. Component encapsulates Flex library. --&gt;
+    &lt;component&gt;
+
+        &lt;!-- Component name --&gt;
+        &lt;name&gt;component1&lt;/name&gt;
+
+        &lt;!-- Component's dependencies within current project --&gt;
+        &lt;dependencies&gt;
+            &lt;!-- The name of another component or application on which current component depends --&gt;
+            &lt;dependency&gt;component2&lt;/dependency&gt;
+            &lt;dependency&gt;...&lt;/dependency&gt;
+            &lt;dependency&gt;...&lt;/dependency&gt;
+        &lt;/dependencies&gt;
+    &lt;/component&gt;
+
+    &lt;component&gt;
+        ...
+    &lt;/component&gt;
+
+    &lt;!-- Flex application. at can contain any number of Flex applications and modules --&gt;
+    &lt;application&gt;
+    
+        &lt;!-- Application name --&gt;
+        &lt;name&gt;application&lt;/name&gt;
+
+        &lt;!-- Application artifacts --&gt;
+        &lt;artefacts&gt;
+    
+            &lt;artefact&gt;
+                &lt;!-- Module MXML file that should be located in the <b>application/mxml/</b> folder --&gt;
+                &lt;fileName&gt;module.mxml&lt;/fileName&gt;
+                &lt;type&gt;module&lt;/type&gt;
+            &lt;/artefact&gt;
+
+            &lt;artefact&gt;
+                &lt;!-- Applocation MXML file that should be located in the <b>application/mxml/</b> folder --&gt;
+                &lt;fileName&gt;App.mxml&lt;/fileName&gt;
+                &lt;type&gt;application&lt;/type&gt;
+            &lt;/artefact&gt;
+
+            &lt;artefact&gt;
+                ...
+            &lt;/artefact&gt;
+        &lt;/artefacts&gt;
+
+        &lt;!-- Application dependencies within the project --&gt;
+        &lt;dependencies&gt;
+            &lt;dependency&gt;component1&lt;/dependency&gt;
+        &lt;/dependencies&gt;
+    &lt;/application&gt;
+
+&lt;/flex-project&gt;</pre>
+</p>
+
+<p>
+    So as you can see, you can define simple project with many Flex libraries and applications.They can depend on each other. Compiler will calculate then the right compilation
+    order according to the dependencies.
+</p>
+
+<h2 id="server">3. Running the Server</h2>
+
+<p>
+    You can start the server by calling the following command:
+<pre>java -jar flex-compile-server-${project.version}.jar [-p=PATH_TO_PROPERTIES]</pre>
+</p>
+
+<p class="note">
+    Since Flex compiler consumes a lot of memory, you should provide following argument to Java VM of you will face with out of memory problem:
+    <pre>-Xms128m -Xmx256m -XX:MaxPermSize=128m</pre>
+</p>
+
+<p>
+    As you can see it can accept only one optional argument - server configuration properties file.
+    See <a href="#props">Sever properties</a> for more details on server configuration.
+</p>
+
+<p>
+    After startup tray icon will appear. It will show messages during compilation. If you double click on it - you will see compilation logs in new frame.
+    You also aperform some operations through context menu or through buttons in the frame.
+</p>
+
+<p>
+    After startup server will wait for compilation requests from <b>flex-compile-client</b>. Server requires Flex SDK. You can provide it through environment variable (<b>FLEX_SDK</b> or <b>FLEX_HOME</b>) or through properties file.
+</p>
+
+<h2 id="client">4. Running the Client</h2>
+
+<p>
+    You can start client and perform project compilation by calling the following command:
+    <pre>java -jar flex-compile-client-${project.version}.jar [-host=SERVER_HOST] [-port=SERVER_PORT] [-config=COMPILATION_PROPS_FILE] [-application=TARGET_BASE] [-target=TARGET_DIR] [projectFileOrDir]</pre>
+</p>
+
+<p>
+    Here is the description of available client arguments:
+</p>
+
+<p>
+<table border="0" cellpadding="5" cellspacing="5">
+    <thead>
+    <tr>
+        <th>Argument</th>
+        <th>Type</th>
+        <th>Default value</th>
+        <th>Required</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>-host</td>
+        <td>String</td>
+        <td>localhost</td>
+        <td>false</td>
+        <td>Compilation server host name</td>
+    </tr>
+    <tr>
+        <td>-port</td>
+        <td>Integer</td>
+        <td>2233</td>
+        <td>false</td>
+        <td>Compilation server port number</td>
+    </tr>
+    <tr>
+        <td>-config</td>
+        <td>String</td>
+        <td><b>server.properties</b> in current working dir</td>
+        <td>false</td>
+        <td>Server configuration properties file. Will be used if server is not available and local compilation should be performed</td>
+    </tr>
+    <tr>
+        <td>-application</td>
+        <td>String</td>
+        <td><b>null</b> - all applications would be compiled</td>
+        <td>false</td>
+        <td>
+            The name of the application that should be compiled (with it's dependent components and it's modules).
+            In this case all other project applications would be skipped. This parameter can be used for compilation optimization. If you want to build <b>App.mxml</b>,
+            for example, then you should provide following argument <b>-application=App</b>.
+        </td>
+    </tr>
+    <tr>
+        <td>-target</td>
+        <td>String</td>
+        <td>Folder named <b>target</b> in the project root dir.</td>
+        <td>false</td>
+        <td>The folder where all compilation artifacts would be saves (<b>swc</b> and <b>swf</b> files)</td>
+    </tr>
+    <tr>
+        <td>&lt;projectFileOrDir&gt;</td>
+        <td>String</td>
+        <td><b>flex-project.xml</b> in the current working dir</td>
+        <td>false</td>
+        <td>The flex project folder of XML file. If folder would be provided, then file named <b>flex-project.xml</b> wild be searched in it.</td>
+    </tr>
+    </tbody>
+</table>
+</p>
+
+<p>
+    After startup client will check connection to the server. If server available - it will use it to compile the project.
+    Otherwise it will compile project locally, without server (but it should be much slower).
+</p>
+
+<h2 id="maven">5. Using Maven 2 Plugin</h2>
+
+<p>
+    In order to compile flex sources with Maven 2 you should use <b>flex-compile-maven2-plugin</b> plugin. You can add it to your <b>pom.xml</b> like this:
+    <pre>&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"&gt;
+
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;groupId&gt;org.oleg&lt;/groupId&gt;
+    &lt;artifactId&gt;flex-compile-example&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+    &lt;packaging&gt;war&lt;/packaging&gt;
+    &lt;name&gt;Flex Compile - Example of usage&lt;/name&gt;
+
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.oleg&lt;/groupId&gt;
+            &lt;artifactId&gt;flex-compile-client&lt;/artifactId&gt;
+            &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+    <b style="color:black;">
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.oleg&lt;/groupId&gt;
+                &lt;artifactId&gt;flex-compile-maven2-plugin&lt;/artifactId&gt;
+                &lt;executions&gt;
+                    &lt;execution&gt;
+                        &lt;id&gt;distributions&lt;/id&gt;
+                        &lt;phase&gt;compile&lt;/phase&gt;
+                        &lt;goals&gt;
+                            &lt;goal&gt;flex-compile&lt;/goal&gt;
+                        &lt;/goals&gt;
+                        &lt;configuration&gt;
+                            &lt;compilerProperties&gt;
+                                &lt;!-- You can avoid this by using environment variable FLEX_SDK or FLEX_HOME --&gt;
+                                &lt;property&gt;
+                                    &lt;name&gt;fcs.flex.flexHome&lt;/name&gt;
+                                    &lt;value&gt;d:/Java/flex/&lt;/value&gt;
+                                &lt;/property&gt;
+                            &lt;/compilerProperties&gt;
+                        &lt;/configuration&gt;
+                    &lt;/execution&gt;
+                &lt;/executions&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+    </b>
+&lt;/project&gt;</pre>
+</p>
+
+<p>
+    Since <b>flex-compile</b> project is not present in any maven repository, you have two options, if you want to use Maven 2 plugin.
+
+    At first, you can checkout project with <b>svn</b> like this:
+    <pre>svn checkout http://flex-compile.googlecode.com/svn/trunk/ flex-compile-read-only</pre>
+
+    and they build it and install to the local maven repository with following command:
+    <pre>mvn install</pre>
+</p>
+
+<p>
+    You can also add all artifacts to the repository manually. You can make this by executing following commands in the lib directory of <b>flex-compile</b> project distribution:
+    <pre>mvn install:install-file -DgroupId=org.oleg -DartifactId=flex-compile-common -Dversion=${project.version} -Dpackaging=jar -Dfile=flex-compile-common-${project.version}.jar
+mvn install:install-file -DgroupId=org.oleg -DartifactId=flex-compile-server -Dversion=${project.version} -Dpackaging=jar -Dfile=flex-compile-server-${project.version}.jar
+mvn install:install-file -DgroupId=org.oleg -DartifactId=flex-compile-client -Dversion=${project.version} -Dpackaging=jar -Dfile=flex-compile-client-${project.version}.jar
+mvn install:install-file -DgroupId=org.oleg -DartifactId=flex-compile-maven2-plugin -Dversion=${project.version} -Dpackaging=maven-plugin -Dfile=flex-compile-maven2-plugin-${project.version}.jar
+</pre>
+</p>
+
+<p>
+    Plugin supports number of configuration parameters. Here is their description:
+</p>
+
+<p>
+<table border="0" cellpadding="5" cellspacing="5">
+    <thead>
+    <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Default value</th>
+        <th>Required</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>warTargetDirectory</td>
+        <td>String</td>
+        <td>${project.build.directory}/${project.artifactId}-${project.version}/</td>
+        <td>false</td>
+        <td>The target directory, where all flex compilation artifacts go</td>
+    </tr>
+    <tr>
+        <td>targetDirectory</td>
+        <td>String</td>
+        <td>/flex-bin</td>
+        <td>false</td>
+        <td>The target directory, where all flex compilation artifacts go (within web application, so the path would be relative to it)</td>
+    </tr>
+    <tr>
+        <td>serverHost</td>
+        <td>String</td>
+        <td>localhost</td>
+        <td>false</td>
+        <td>Compilation server host name</td>
+    </tr>
+    <tr>
+        <td>serverPort</td>
+        <td>Integer</td>
+        <td>2233</td>
+        <td>false</td>
+        <td>Compilation server port number</td>
+    </tr>
+    <tr>
+        <td>compilerPropertiesFile</td>
+        <td>String</td>
+        <td>${basedir}/flex-compile.properties</td>
+        <td>false</td>
+        <td>Server configuration properties file. Will be used if server is not available and local compilation should be performed</td>
+    </tr>
+    <tr>
+        <td>compilerProperties</td>
+        <td>Properties</td>
+        <td>&nbsp;</td>
+        <td>false</td>
+        <td>
+            You can provide properties directly in <b>pom.xml</b> instead of creating separate properties file.
+        </td>
+    </tr>
+    <tr>
+        <td>projectLocation</td>
+        <td>String</td>
+        <td>${basedir}/src/main/flex/</td>
+        <td>false</td>
+        <td>The flex project folder of XML file. If folder would be provided, then file named <b>flex-project.xml</b> wild be searched in it.</td>
+    </tr>
+    </tbody>
+</table>
+</p>
+
+<h2 id="filter">6. Using Compilation Filter</h2>
+
+<p>
+For fast development you can add new Filter to your <b>web.xml</b>. This filter will track all requests to <b>*.swf</b> files and will compile these applications
+if some changes would be detected. You can declare filter like this:
+    <pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;web-app version="2.4"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"&gt;
+
+    <b style="color:black;">
+    &lt;filter&gt;
+        &lt;filter-name&gt;flexCompilerFilter&lt;/filter-name&gt;
+        &lt;filter-class&gt;org.oleg.fcs.web.filter.DynamicFlexCompilationFilter&lt;/filter-class&gt;
+
+        &lt;init-param&gt;
+            &lt;param-name&gt;targetDir&lt;/param-name&gt;
+            &lt;param-value&gt;flex-bin&lt;/param-value&gt;
+        &lt;/init-param&gt;
+
+        &lt;init-param&gt;
+            &lt;param-name&gt;flexProject&lt;/param-name&gt;
+            &lt;param-value&gt;../flex&lt;/param-value&gt;
+        &lt;/init-param&gt;
+
+        &lt;init-param&gt;
+            &lt;param-name&gt;filterResourceRegexp&lt;/param-name&gt;
+            &lt;param-value&gt;/flex-bin/[\w\d]*\.swf&lt;/param-value&gt;
+        &lt;/init-param&gt;
+
+
+        &lt;init-param&gt;
+            &lt;param-name&gt;compilerProperties&lt;/param-name&gt;
+            &lt;param-value&gt;
+                # You can avoid this by using environment variable FLEX_SDK or FLEX_HOME
+                fcs.flex.flexHome=d:/Java/flex/
+            &lt;/param-value&gt;
+        &lt;/init-param&gt;
+    &lt;/filter&gt;
+
+    &lt;filter-mapping&gt;
+        &lt;filter-name&gt;flexCompilerFilter&lt;/filter-name&gt;
+        &lt;url-pattern&gt;/flex-bin/*&lt;/url-pattern&gt;
+    &lt;/filter-mapping&gt;
+       </b>
+&lt;/web-app&gt;</pre>
+</p>
+
+<p>
+    Here is the list of all available init parameters (All paths are relative to the web application root):
+</p>
+
+<p>
+<table border="0" cellpadding="5" cellspacing="5">
+    <thead>
+    <tr>
+        <th>Argument</th>
+        <th>Type</th>
+        <th>Default value</th>
+        <th>Required</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>host</td>
+        <td>String</td>
+        <td>localhost</td>
+        <td>false</td>
+        <td>Compilation server host name</td>
+    </tr>
+    <tr>
+        <td>port</td>
+        <td>Integer</td>
+        <td>2233</td>
+        <td>false</td>
+        <td>Compilation server port number</td>
+    </tr>
+    <tr>
+        <td>filterResourceRegexp</td>
+        <td>String (Regular expression)</td>
+        <td>&nbsp;</td>
+        <td>false</td>
+        <td>Regular expression would be applied to the current request path. If it matches it, then compilation would be performed.</td>
+    </tr>
+    <tr>
+        <td>compilerPropertiesFile</td>
+        <td>String</td>
+        <td>&nbsp;</td>
+        <td>false</td>
+        <td>Server configuration properties file. Will be used if server is not available and local compilation should be performed</td>
+    </tr>
+    <tr>
+        <td>compilerProperties</td>
+        <td>Properties</td>
+        <td>&nbsp;</td>
+        <td>false</td>
+        <td>
+            You can provide properties directly in <b>web.xml</b> instead of creating separate properties file.
+        </td>
+    </tr>
+    <tr>
+        <td>targetDir</td>
+        <td>String</td>
+        <td>Folder named <b>target</b> in the project root dir.</td>
+        <td>false</td>
+        <td>The folder where all compilation artifacts would be saves (<b>swc</b> and <b>swf</b> files)</td>
+    </tr>
+    <tr>
+        <td>flexProject</td>
+        <td>String</td>
+        <td>&nbsp;</td>
+        <td>true</td>
+        <td>The flex project folder of XML file. If folder would be provided, then file named <b>flex-project.xml</b> wild be searched in it.</td>
+    </tr>
+    </tbody>
+</table>
+</p>
+
+<h2 id="props">7. Sever properties</h2>
+
+<p>
+Here is the description of all possible server configuration properties:
+</p>
+
+<p>
+<table border="0" cellpadding="5" cellspacing="5">
+    <thead>
+    <tr>
+        <th>Property</th>
+        <th>Type</th>
+        <th>Default value</th>
+        <th>Required</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>fcs.server.port</td>
+        <td>Integer</td>
+        <td>2233</td>
+        <td>false</td>
+        <td>Server port number</td>
+    </tr>
+    <tr>
+        <td>fcs.server.libpath</td>
+        <td>String</td>
+        <td>${flexHome}/lib/*.jar</td>
+        <td>false</td>
+        <td>Where to search for the JARs. ${flexHome} placeholder can be used</td>
+    </tr>
+    <tr>
+        <td>fcs.flex.flexHome</td>
+        <td>String</td>
+        <td>&nbsp;</td>
+        <td>false</td>
+        <td>
+            Flex home directory path. If not provided, then it would be taken from environment variable: <b>FLEX_SDK</b> or <b>FLEX_HOME</b>
+        </td>
+    </tr>
+    <tr>
+        <td>fcs.flex.flexFonts</td>
+        <td>String</td>
+        <td>winFonts.ser</td>
+        <td>false</td>
+        <td>Flex font file that will be used during compilation</td>
+    </tr>
+    <tr>
+        <td>fcs.flex.additionalLibs</td>
+        <td>String</td>
+        <td></td>
+        <td>false</td>
+        <td>Additional flex libraries, that should be added during compilation.</td>
+    </tr>
+    <tr>
+        <td>fcs.showTrayNotifications</td>
+        <td>Boolean</td>
+        <td>true</td>
+        <td>false</td>
+        <td>Should notification be shown in the tray</td>
+    </tr>
+
+    <tr>
+        <td>fcs.showComponentNotifications</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>false</td>
+        <td>Should notification be shown in the tray during single components compilation</td>
+    </tr>
+    <tr>
+        <td>fcs.showProjectNotifications</td>
+        <td>Boolean</td>
+        <td>true</td>
+        <td>false</td>
+        <td>Should notification be shown in the tray (only project global events)</td>
+    </tr>
+    <tr>
+        <td>fcs.showProgress</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>false</td>
+        <td>Should compilation process percentage notifications be shown in the tray</td>
+    </tr>
+    <tr>
+        <td>fcs.logViewer.width</td>
+        <td>Integer</td>
+        <td>900</td>
+        <td>false</td>
+        <td>Width of the log viewer window</td>
+    </tr>
+    <tr>
+        <td>fcs.logViewer.height</td>
+        <td>Integer</td>
+        <td>900</td>
+        <td>false</td>
+        <td>Height of the log viewer window</td>
+    </tr>
+
+    </tbody>
+</table>
+</p>
+
+<p>
+    Here is the example of the <b>server.properties</b> file:
+    <pre>#
+# Server port number
+# Default value: 2233
+#
+
+#fcs.server.port=2233
+
+#
+# Where to search for the JARs
+# ${flexHome} placeholder can be used
+# Default value: ${flexHome}/lib/*.jar
+#
+
+#fcs.server.libpath=${flexHome}/lib/*.jar
+
+#
+# Flex home directory path
+# Taken from environment variable: FLEX_SDK or FLEX_HOME
+#
+
+fcs.flex.flexHome=d:/Java/flex/
+
+#
+# Flex font file that will be used during compilation
+# Default value: winFonts.ser
+#
+
+#fcs.flex.flexFonts=winFonts.ser
+
+#
+# Additional flex libraries, that should be added during compilation
+#
+
+#fcs.flex.additionalLibs=
+
+#
+# Should notification be shown in the tray
+# Default value: true
+#
+
+#fcs.showTrayNotifications=true
+
+#
+# Should notification be shown in the tray during single components compilation
+# Default value: false
+#
+
+#fcs.showComponentNotifications=false
+
+#
+# Should notification be shown in the tray (only project global events)
+# Default value: true
+#
+
+#fcs.showProjectNotifications=false
+
+#
+# Should compilation process percentage notifications be shown in the tray
+# Default value: false
+#
+
+#fcs.showProgress=false
+
+#
+# Width of the log viewer window
+# Default value: 900
+#
+
+#fcs.logViewer.width=900
+
+#
+# Height of the log viewer window
+# Default value: 900
+#
+
+#fcs.logViewer.height=900</pre>
+</p>
+
+</body>
+</html>
