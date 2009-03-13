@@ -1,0 +1,103 @@
+<?xml version="1.0" ?>
+<mx:Application
+
+        xmlns:flexlib="flexlib.containers.*"
+        xmlns:ext="nl.wv.extenders.panel.*"
+        xmlns:mx="http://www.adobe.com/2006/mxml"
+        xmlns:kapit="fr.kapit.*">
+
+    <kapit:KapInspect />
+
+    <mx:Script><![CDATA[
+        import mx.collections.ArrayCollection;
+        import mx.controls.Alert;
+        import hhh.Hello;
+
+        var arr: ArrayCollection = new ArrayCollection(["Ffff", "Bbbbb"]);
+
+        function hello():void {
+            var jjj:Hello = new Hello();
+            Alert.show(ti.text + jjj.getStr());
+        }
+
+        function hello1():void {
+            var jjj:Jjj = new Jjj();
+            Alert.show(jjj.getStr());
+        }
+
+        function full():void {
+            Alert.show(new Jjj().getStr() + new Hello().getStr(), "Full")
+        }
+
+//        function getRes(event) {
+//            Alert.show("Ok \n" + webService.GetList.result)
+//        }
+//
+//        function getFault(event) {
+//            Alert.show(event)
+//        }
+//
+//        function init():void {
+//            webService.GetList.send();
+//        }
+
+        ]]></mx:Script>
+     <!--
+    <mx:WebService id="webService"
+                   wsdl="http://www.authorstream.com/Services/Test.asmx?wsdl">
+        <mx:operation name="GetList"
+
+                      result="getRes(event);"
+                      fault="getFault(event);">
+            <mx:request><prefixText>Hello</prefixText></mx:request>
+        </mx:operation>
+    </mx:WebService>
+         -->
+
+    <mx:Button label="{ti.text}" click="full()" />
+
+    <mx:Text id="ff"  click="hello()"/>
+    <mx:Text id="ff1" text="Hello 11111" mouseOver="hello()"/>
+
+    <mx:TextInput id="ti" />
+
+    <mx:Panel
+            title="Simple data binding"
+
+            paddingLeft="10" paddingRight="10" paddingBottom="10" paddingTop="10"
+            horizontalAlign="center"
+
+        >
+            <mx:HSlider id="mySlider"/>
+            <mx:Text text="{mySlider.value}"/>
+        </mx:Panel>
+                                                     
+
+    <mx:TextInput text="hello" />               
+
+    <mx:ComboBox labelField="ff" >
+
+    </mx:ComboBox>   
+                        
+</mx:Application>
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application
+    xmlns:mx="http://www.adobe.com/2006/mxml"
+    viewSourceURL="src/DataBindingSimple/index.html"
+    width="250" height="150"
+>
+    <mx:Panel
+        title="Simple data binding"
+
+        paddingLeft="10" paddingRight="10" paddingBottom="10" paddingTop="10"
+        horizontalAlign="center"
+
+    >
+        <mx:HSlider id="mySlider"/>
+        <mx:Text text="{mySlider.value}"/>
+    </mx:Panel>
+
+</mx:Application>
+
+-->
