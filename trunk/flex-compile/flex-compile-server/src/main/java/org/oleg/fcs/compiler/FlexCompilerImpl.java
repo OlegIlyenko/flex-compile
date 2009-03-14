@@ -114,14 +114,14 @@ public class FlexCompilerImpl implements FlexCompiler {
     }
 
     @Override
-    public void clearCache() {
+    public synchronized void clearCache() {
         PROJECT_CACHE.clear();
         applicationCache.clear();
         componentCache.clear();
     }
 
     @Override
-    public List<CompilationResults> compile(String targetName, File projectFile, String dstDir) {
+    public synchronized List<CompilationResults> compile(String targetName, File projectFile, String dstDir) {
         Project project;
         List<Component> sortedComponentList = null;
         Map<Component, Set<Component>> componentDependencies = null;
