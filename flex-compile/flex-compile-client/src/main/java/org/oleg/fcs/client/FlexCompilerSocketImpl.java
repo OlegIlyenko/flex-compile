@@ -59,7 +59,7 @@ public class FlexCompilerSocketImpl implements FlexCompiler {
     }
 
     @Override
-    public List<CompilationResults> compile(String targetName, File projecFile, String dstDir) throws ConnectionException {
+    public synchronized List<CompilationResults> compile(String targetName, File projecFile, String dstDir) throws ConnectionException {
         try {
             checkAndInitializeConnection();
 
@@ -77,7 +77,7 @@ public class FlexCompilerSocketImpl implements FlexCompiler {
     }
 
     @Override
-    public void clearCache() {
+    public synchronized void clearCache() {
         try {
             checkAndInitializeConnection();
             out.writeObject(new ClearCacheValue());
