@@ -24,6 +24,10 @@
                 <fileName>App.mxml</fileName>
                 <type>application</type>
             </artefact>
+            <artefact>
+                <fileName>Theme.css</fileName>
+                <type>css</type>
+            </artefact>
         </artefacts>
         <dependencies>
             <dependency>component1</dependency>
