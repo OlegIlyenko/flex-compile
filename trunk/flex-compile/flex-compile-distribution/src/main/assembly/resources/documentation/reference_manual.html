@@ -161,6 +161,7 @@
                 application1
                 <ul>
                     <li>lib<span class="desc"> - Flex libraries which are needed for the application (*.swc files)</span></li>
+                    <li>css<span class="desc"> - CSS files (internal and external). External CSS would be compiled, if you provide them as articacts for the application</span></li>
                     <li>src<span class="desc"> - ActionScript sources</span></li>
                     <li>
                         mxml<span class="desc"> - MXML source files</span>
@@ -226,6 +227,12 @@
             &lt;/artefact&gt;
 
             &lt;artefact&gt;
+                &lt;!-- External CSS that should be compiled. File that should be located in the <b>application/css/</b> folder --&gt;
+                &lt;fileName&gt;Theme.css&lt;/fileName&gt;
+                &lt;type&gt;css&lt;/type&gt;
+            &lt;/artefact&gt;
+    
+            &lt;artefact&gt;
                 ...
             &lt;/artefact&gt;
         &lt;/artefacts&gt;
@@ -242,6 +249,46 @@
 <p>
     So as you can see, you can define simple project with many Flex libraries and applications.They can depend on each other. Compiler will calculate then the right compilation
     order according to the dependencies.
+</p>
+
+<p>
+    You can provide following types of Artifacts:
+    <ul>
+        <li>application</li>
+        <li>module</li>
+        <li>css</li>
+    </ul>
+</p>
+
+<p>
+    After successful compilation you fill find following output directory structure:
+    <ul>
+        <li>
+            Target folder
+            <ul>
+                <li>
+                    libraries
+                    <ul>
+                        <li>component1.swc</li>
+                        <li>component2.swc</li>
+                    </ul>
+                </li>
+                <li>
+                    css
+                    <ul>
+                        <li>Theme.swf</li>
+                    </ul>
+                </li>
+                <li>
+                    modules
+                    <ul>
+                        <li>module.swf</li>
+                    </ul>
+                </li>
+                <li>App.swf</li>
+            </ul>
+        </li>
+    </ul>
 </p>
 
 <h2 id="server">3. Running the Server</h2>

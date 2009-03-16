@@ -201,6 +201,13 @@ public class FlexCompilerImpl implements FlexCompiler {
                 }
                 outputFile = new File(swfTargetDir, targetFileName);
                 break;
+            case css:
+                File swfTargetCssDir = new File(dstDir, Constants.ComponentFolders.CSS_TARGET_DIR);
+                if (!swfTargetCssDir.exists()) {
+                    swfTargetCssDir.mkdirs();
+                }
+                outputFile = new File(swfTargetCssDir, targetFileName);
+                break;
         }
 
         return outputFile;
@@ -231,8 +238,10 @@ public class FlexCompilerImpl implements FlexCompiler {
 
                 if (appArt.getType() == Artefact.Type.application) {
                     swf = new File(dstDir, appArtFileName);
-                } else {
-                    swf = new File(dstDir, Constants.ComponentFolders.MODULE_TARGET_DIR + File.separator + appArtFileName);
+                } else if (appArt.getType() == Artefact.Type.module) {
+                    swf = new File(dstDir, appArtFileName);
+                } else if (appArt.getType() == Artefact.Type.css) {
+                    swf = new File(dstDir, Constants.ComponentFolders.CSS_TARGET_DIR + File.separator + appArtFileName);
                 }
             } else {
                 swf = new File(dstDir, Constants.ComponentFolders.SWC_TARGET_DIR + File.separator + component.getName() + ".swc");
@@ -307,29 +316,36 @@ public class FlexCompilerImpl implements FlexCompiler {
 
             report = flexComponent.getReport();
             currentBuildTarget = component.toString();
-        } else {
+        } else { // Application
             org.oleg.fcs.project.model.Application app = (org.oleg.fcs.project.model.Application) component;
             for (Artefact artefact : app.getArtefacts()) {
                 if (targetName != null && artefact.getType() == Artefact.Type.application && !artefact.getFileName().equals(currentPath + ".mxml")) {
                     continue; // skip all applications if they are not needed
                 }
 
-                String currentMxml = artefact.getFileName();
+                String currentArtifactFileName = artefact.getFileName();
 
                 protocol.append("Starting " + artefact.getType() + " '" + artefact.getFileName() + "'...").append("\n");
-                fireEvent(new CompilerEvent(this, "Starting...", CompilerEvent.EventType.Started, currentMxml));
+                fireEvent(new CompilerEvent(this, "Starting...", CompilerEvent.EventType.Started, currentArtifactFileName));
 
-                File mxmlFile = new File(projectDir, app.getName() + File.separator + Constants.ComponentFolders.MXML_DIR + File.separator + currentMxml);
-                if (!mxmlFile.exists()) {
-                    return new CompilationResults("No changes: MXML was deleted... Finishing.", false, false, project.getName(), component.getName());
+                File artifactFile = null;
+
+                if (artefact.getType() == Artefact.Type.css) {
+                    artifactFile = new File(projectDir, app.getName() + File.separator + Constants.ComponentFolders.CSS_DIR + File.separator + currentArtifactFileName);
+                } else {
+                    artifactFile = new File(projectDir, app.getName() + File.separator + Constants.ComponentFolders.MXML_DIR + File.separator + currentArtifactFileName);
                 }
 
-                String applicationCacheKey = project.toString() + app.toString() + currentMxml;
+                if (!artifactFile.exists()) {
+                    return new CompilationResults("No changes: Artifact was deleted... Finishing.", false, false, project.getName(), component.getName());
+                }
+
+                String applicationCacheKey = project.toString() + app.toString() + currentArtifactFileName;
                 flex2.tools.oem.Application application = applicationCache.get(applicationCacheKey);
 
                 if (application == null) {
                     try {
-                        application = new Application(mxmlFile);
+                        application = new Application(artifactFile);
                     } catch (FileNotFoundException e) {/* impossible! we already checked it */}
 
                     // FIXME: library cache
@@ -341,6 +357,8 @@ public class FlexCompilerImpl implements FlexCompiler {
                         application.setProgressMeter(progressTracker);
                     }
 
+
+                    // TODO: add another (simple) configuration for CSS artifacts
                     flex2.tools.oem.Configuration configuration = application.getDefaultConfiguration();
                     configure(configuration, new File(projectDir, app.getName()), new File(dstDir), app, componentDependencies.get(component));
                     application.setConfiguration(configuration);
@@ -351,7 +369,7 @@ public class FlexCompilerImpl implements FlexCompiler {
                 }
 
                 protocol.append("Compiling...").append("\n");
-                fireEvent(new CompilerEvent(this, "Compiling...", CompilerEvent.EventType.Compilation, currentMxml));
+                fireEvent(new CompilerEvent(this, "Compiling...", CompilerEvent.EventType.Compilation, currentArtifactFileName));
 
                 if (outputFiles.size() == 0) {
                     for (Artefact a : app.getArtefacts()) {
@@ -371,7 +389,7 @@ public class FlexCompilerImpl implements FlexCompiler {
                 // libraryCache = application.getSwcCache();
 
                 report = application.getReport();
-                currentBuildTarget = currentMxml;
+                currentBuildTarget = currentArtifactFileName;
 
                 if (hasErrors(report.getMessages())) {
                     break;

@@ -134,7 +134,12 @@ public class DynamicFlexCompilationFilter implements Filter {
 
         String currentBaseName = currentPath.substring(0, currentPath.indexOf("."));
 
-        List<CompilationResults> results = compiler.compile(currentBaseName, flexProject, targetDir.getAbsolutePath());
+        List<CompilationResults> results = null;
+        try {
+            results = compiler.compile(currentBaseName, flexProject, targetDir.getAbsolutePath());
+        } catch (Exception e) {
+            log.error("Error during compillation.", e);
+        }
 
         boolean hasErrors = false;
         for (CompilationResults cr : results) {

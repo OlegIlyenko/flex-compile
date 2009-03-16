@@ -7,7 +7,7 @@ package org.oleg.fcs.project.model;
  */
 public class Artefact {
 
-    public static enum Type {module, application}
+    public static enum Type {module, application, css}
 
     private String fileName;
 

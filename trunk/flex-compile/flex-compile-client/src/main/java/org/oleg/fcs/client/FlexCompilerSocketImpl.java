@@ -2,6 +2,8 @@ package org.oleg.fcs.client;
 
 import org.oleg.fcs.Constants;
 import org.oleg.fcs.api.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.net.Socket;
 import java.io.IOException;
@@ -17,6 +19,8 @@ import java.util.List;
  */
 @SuppressWarnings("unchecked")
 public class FlexCompilerSocketImpl implements FlexCompiler {
+
+    private static final Log log = LogFactory.getLog(FlexCompilerSocketImpl.class);
 
     private String host = Constants.CLIENT_DEFAULT_HOST;
 
@@ -36,7 +40,7 @@ public class FlexCompilerSocketImpl implements FlexCompiler {
         this.port = port;
 
         try {
-            checkAndInitializeConnection();
+            checkAndInitializeConnection(false);
         } catch (IOException e) {
             throw new ConnectionException("Unable connect to the server", e);
         }
@@ -61,9 +65,17 @@ public class FlexCompilerSocketImpl implements FlexCompiler {
     @Override
     public synchronized List<CompilationResults> compile(String targetName, File projecFile, String dstDir) throws ConnectionException {
         try {
-            checkAndInitializeConnection();
+            checkAndInitializeConnection(false);
 
-            out.writeObject(new CompileValue(targetName, projecFile, dstDir));
+            try {
+                out.writeObject(new CompileValue(targetName, projecFile, dstDir));
+            } catch (IOException e) {
+                if (e.getMessage() != null && e.getMessage().indexOf("Connection reset by peer") != -1) {
+                    log.warn("Connection to server lost. Reconnecting...");
+                    checkAndInitializeConnection(true);
+                    out.writeObject(new CompileValue(targetName, projecFile, dstDir));
+                }
+            }
             Object res = in.readObject();
 
             if (!(res instanceof List)) {
@@ -79,7 +91,7 @@ public class FlexCompilerSocketImpl implements FlexCompiler {
     @Override
     public synchronized void clearCache() {
         try {
-            checkAndInitializeConnection();
+            checkAndInitializeConnection(false);
             out.writeObject(new ClearCacheValue());
         } catch (Exception e) {
             throw new ConnectionException("Error duting comunication with server.", e);
@@ -95,8 +107,8 @@ public class FlexCompilerSocketImpl implements FlexCompiler {
         }
     }
 
-    protected void checkAndInitializeConnection() throws IOException {
-        if (socket == null || !socket.isConnected() || socket.isInputShutdown() || socket.isOutputShutdown()) {
+    protected void checkAndInitializeConnection(boolean force) throws IOException {
+        if (socket == null || !socket.isConnected() || socket.isInputShutdown() || socket.isOutputShutdown() || force) {
             socket = getConnection();
             out = new ObjectOutputStream(socket.getOutputStream());
             in = new ObjectInputStream(socket.getInputStream());
