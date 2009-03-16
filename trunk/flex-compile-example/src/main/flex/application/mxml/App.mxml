@@ -82,6 +82,8 @@
         <mx:Button label="Happy" />
     </mx:Panel>
 
+    <mx:Button label="Load theme" click="StyleManager.loadStyleDeclarations('../flex-bin/css/Theme.swf')" />
+
 </mx:Application>
 <!--
 <?xml version="1.0" encoding="utf-8"?>
