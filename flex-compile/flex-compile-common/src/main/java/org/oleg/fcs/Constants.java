@@ -29,11 +29,16 @@ public interface Constants {
     List<String> FLEX_SDK_ENV_VARS = Arrays.asList("FLEX_SDK", "FLEX_HOME");
 
     interface ComponentFolders {
+        // Project dirs
         String SRC_DIR = "src";
         String MXML_DIR = "mxml";
         String LIB_DIR = "lib";
+        String CSS_DIR = "css";
+
+        //Output dirs
         String SWC_TARGET_DIR = "libraries";
         String MODULE_TARGET_DIR = "modules";
+        String CSS_TARGET_DIR = "css";
         String DEFAULT_TARGET_DIR = "target";
     }
 
