@@ -16,6 +16,12 @@ public class Project {
 
     private Date lastModificationDate;
 
+    private List<String> defaultLocales;
+
+    private String defaultFlexConfig;
+
+    private List<Theme> defaultThemes;
+
     public Date getLastModificationDate() {
         return lastModificationDate;
     }
@@ -43,5 +49,29 @@ public class Project {
     @Override
     public String toString() {
         return "Project '" + name + "'";
+    }
+
+    public List<String> getDefaultLocales() {
+        return defaultLocales;
+    }
+
+    public void setDefaultLocales(List<String> defaultLocales) {
+        this.defaultLocales = defaultLocales;
+    }
+
+    public String getDefaultFlexConfig() {
+        return defaultFlexConfig;
+    }
+
+    public void setDefaultFlexConfig(String defaultFlexConfig) {
+        this.defaultFlexConfig = defaultFlexConfig;
+    }
+
+    public List<Theme> getDefaultThemes() {
+        return defaultThemes;
+    }
+
+    public void setDefaultThemes(List<Theme> defaultThemes) {
+        this.defaultThemes = defaultThemes;
     }
 }
