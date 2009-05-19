@@ -4,13 +4,13 @@
     <groupId>org.oleg</groupId>
     <artifactId>fff</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-beta</version>
+    <version>1.1-SNAPSHOT</version>
     <name>Flex Compile</name>
 
     <scm>
-        <connection>scm:svn:https://oleg.ilyenko:Hx9xf2jf3zK6@flex-compile.googlecode.com/svn/tags/fff_1.0_beta</connection>
-        <developerConnection>scm:svn:https://oleg.ilyenko:Hx9xf2jf3zK6@flex-compile.googlecode.com/svn/tags/fff_1.0_beta</developerConnection>
-        <url>http://code.google.com/p/flex-compile/source/browse/tags/fff_1.0_beta</url>
+        <connection>scm:svn:https://oleg.ilyenko:Hx9xf2jf3zK6@flex-compile.googlecode.com/svn/trunk/flex-compile/test</connection>
+        <developerConnection>scm:svn:https://oleg.ilyenko:Hx9xf2jf3zK6@flex-compile.googlecode.com/svn/trunk/flex-compile/test</developerConnection>
+        <url>http://code.google.com/p/flex-compile/source/browse/</url>
     </scm>
 
 
