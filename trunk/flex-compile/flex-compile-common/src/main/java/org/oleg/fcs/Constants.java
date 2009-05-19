@@ -14,6 +14,8 @@ public interface Constants {
 
     String DEFAULT_PROJECT_FILE_NAME = "flex-project.xml";
 
+    String DEFAULT_FLEX_CONFIG_FILE_NAME = "flex-config.xml";
+
     String DEFAUT_PROPERTIES_FILE = "server.properties";
 
     String DEFAULT_LIBPATH = "${flexHome}/lib/*.jar";
@@ -27,6 +29,8 @@ public interface Constants {
     String CLIENT_DEFAULT_HOST = "localhost";
 
     List<String> FLEX_SDK_ENV_VARS = Arrays.asList("FLEX_SDK", "FLEX_HOME");
+
+    String[] DEFAULT_LOCALE = new String[] {"en_US"};
 
     interface ComponentFolders {
         // Project dirs

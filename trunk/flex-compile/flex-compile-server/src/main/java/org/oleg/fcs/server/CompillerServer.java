@@ -83,8 +83,18 @@ public class CompillerServer implements Runnable {
                         CompileValue val = (CompileValue) obj;
                         File projectFile = val.getProjectFile();
 
-                        List<CompilationResults> res = delegated.compile(val.getPath(), projectFile, val.getDstDir());
-                        out.writeObject(res);
+                        List<CompilationResults> res = null;
+                        boolean wasException = false;
+                        try {
+                            res = delegated.compile(val.getPath(), projectFile, val.getDstDir());
+                        } catch (Exception e) {
+                            wasException = true;
+                            out.writeObject(new UnexpectedExceptionValue(e));
+                        }
+
+                        if (!wasException) {
+                            out.writeObject(res);
+                        }
 
                     } else if (obj instanceof ClearCacheValue) {
                         delegated.clearCache();

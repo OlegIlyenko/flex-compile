@@ -5,7 +5,7 @@ package org.oleg.fcs.project.dao;
  *
  * @author Oleg Ilyenko
  */
-public class ProjectException extends Exception {
+public class ProjectException extends RuntimeException {
     public ProjectException() {
         super();
     }
