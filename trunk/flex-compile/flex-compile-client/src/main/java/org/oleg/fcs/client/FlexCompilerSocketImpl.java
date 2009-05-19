@@ -70,7 +70,7 @@ public class FlexCompilerSocketImpl implements FlexCompiler {
             try {
                 out.writeObject(new CompileValue(targetName, projecFile, dstDir));
             } catch (IOException e) {
-                if (e.getMessage() != null && e.getMessage().indexOf("Connection reset by peer") != -1) {
+                if (e.getMessage() != null && (e.getMessage().indexOf("Connection reset by peer") != -1 || e.getMessage().indexOf("Software caused connection abort") != -1)) {
                     log.warn("Connection to server lost. Reconnecting...");
                     checkAndInitializeConnection(true);
                     out.writeObject(new CompileValue(targetName, projecFile, dstDir));
@@ -78,7 +78,9 @@ public class FlexCompilerSocketImpl implements FlexCompiler {
             }
             Object res = in.readObject();
 
-            if (!(res instanceof List)) {
+            if (res instanceof UnexpectedExceptionValue) {
+                throw ((UnexpectedExceptionValue) res).getCause();
+            } else if (!(res instanceof List)) {
                 throw new ConnectionException("Server returned unknown object: " + res.getClass().getName());
             }
 
