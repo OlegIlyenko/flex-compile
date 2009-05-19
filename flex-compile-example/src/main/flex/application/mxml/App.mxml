@@ -5,7 +5,9 @@
         xmlns:mx="http://www.adobe.com/2006/mxml"
         xmlns:kapit="fr.kapit.*">
 
-    <kapit:KapInspect />
+		<!--
+		<kapit:KapInspect />
+		-->
 
     <mx:Script><![CDATA[
         import mx.collections.ArrayCollection;
