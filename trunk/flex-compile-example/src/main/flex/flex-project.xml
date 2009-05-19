@@ -1,4 +1,4 @@
-<flex-project>
+<flex-project defaultLocales="en_US">
 
     <name>Test flex project</name>
 
@@ -13,8 +13,13 @@
         <name>component2</name>
     </component>
 
+	<component>
+		<name>theme-component</name>
+	</component>
+
     <application>
         <name>application</name>
+
         <artefacts>
             <artefact>
                 <fileName>module.mxml</fileName>
@@ -29,8 +34,17 @@
                 <type>css</type>
             </artefact>
         </artefacts>
+
+        <themes>
+            <theme>
+                <type>component</type>
+                <name>theme-component</name>
+            </theme>
+        </themes>
+
         <dependencies>
             <dependency>component1</dependency>
+            <dependency>theme-component</dependency>
         </dependencies>
     </application>
 

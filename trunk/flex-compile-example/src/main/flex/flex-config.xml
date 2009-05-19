@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<flex-config>
+    <compiler>
+        <debug>true</debug>
+    </compiler>
+</flex-config>
