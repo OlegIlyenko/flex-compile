@@ -9,9 +9,6 @@ import javax.xml.stream.XMLStreamReader;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import java.net.URL;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.io.FileReader;
 import java.io.InputStream;
 import java.io.IOException;
 import java.io.File;
@@ -98,6 +95,7 @@ public class XmlProjectDaoImpl implements ProjectDao {
             String text = "";
             Component currComponent = null;
             Artefact currArtefact = null;
+            Theme currTheme = null;
             String name = null;
 
             while (reader.hasNext()) {
@@ -105,10 +103,20 @@ public class XmlProjectDaoImpl implements ProjectDao {
                 switch (event) {
                     case XMLStreamConstants.START_ELEMENT:
                         name = reader.getLocalName();
-                        if (name.equals("application")) {
+                        if (name.equals("flex-project")) {
+                            project.setDefaultLocales(getLocales(reader.getAttributeValue(null, "defaultLocales")));
+                        } else if (name.equals("application")) {
                             currComponent = new Application();
+                            currComponent.setLocales(getLocales(reader.getAttributeValue(null, "locales")));
                         } else if (name.equals("component")) {
                             currComponent = new Component();
+                            currComponent.setLocales(getLocales(reader.getAttributeValue(null, "locales")));
+                        } else if (name.equals("theme")) {
+                            currTheme = new Theme();
+                        } else if (name.equals("themes")) {
+                            ((Application) currComponent).setThemes(new ArrayList<Theme>());
+                        } else if (name.equals("default-themes")) {
+                            project.setDefaultThemes(new ArrayList<Theme>());
                         } else if (name.equals("artefact")) {
                             if (!(currComponent instanceof Application)) {
                                 throw new ProjectException("Component can't have any artifacts");
@@ -126,10 +134,24 @@ public class XmlProjectDaoImpl implements ProjectDao {
                             currComponent = null;
                         } else if (name.equals("name")) {
                             if (currComponent != null) {
-                                currComponent.setName(text);
+                                if (currTheme != null) {
+                                    currTheme.setName(text);
+                                } else {
+                                    currComponent.setName(text);
+                                }
                             } else {
                                 project.setName(text);
                             }
+                        } else if (name.equals("type")) {
+                            if (currTheme != null) {
+                                currTheme.setType(Theme.Type.valueOf(text));
+                            } else if (currArtefact != null) {
+                                currArtefact.setType(Artefact.Type.valueOf(text));
+                            }
+                        } else if (name.equals("default-flex-config")) {
+                            project.setDefaultFlexConfig(text);
+                        } else if (name.equals("flex-config")) {
+                            currComponent.setFlexConfig(text);
                         } else if (name.equals("dependency")) {
                             if (currComponent.getDependencies() == null) {
                                 currComponent.setDependencies(new ArrayList<Dependency>());
@@ -140,14 +162,20 @@ public class XmlProjectDaoImpl implements ProjectDao {
                             currComponent.getDependencies().add(dep);
                         } else if (name.equals("fileName")) {
                             currArtefact.setFileName(text);
-                        } else if (name.equals("type")) {
-                            currArtefact.setType(Artefact.Type.valueOf(text));
                         } else if (name.equals("artefact")) {
                             Application app = (Application) currComponent;
                             if (app.getArtefacts() == null) {
                                 app.setArtefacts(new ArrayList<Artefact>());
                             }
                             app.getArtefacts().add(currArtefact);
+                            currArtefact = null;
+                        } else if (name.equals("theme")) {
+                            if (currComponent != null && (currComponent instanceof Application)) {
+                                ((Application) currComponent).getThemes().add(currTheme);
+                            } else {
+                                project.getDefaultThemes().add(currTheme);
+                            }
+                            currTheme = null;
                         }
                         break;
                     case XMLStreamConstants.SPACE:
@@ -164,5 +192,20 @@ public class XmlProjectDaoImpl implements ProjectDao {
         }
 
         return project;
+    }
+
+    protected List<String> getLocales(String locales) {
+        if (locales == null || locales.trim().equals("")) {
+            return new ArrayList<String>();
+        }
+
+        List<String> localeList = new ArrayList<String>();
+        for (String locale : locales.split("\\s*,\\s*")) {
+            if (!locale.trim().equals("")) {
+                localeList.add(locale.trim());
+            }
+        }
+
+        return localeList;
     }
 }

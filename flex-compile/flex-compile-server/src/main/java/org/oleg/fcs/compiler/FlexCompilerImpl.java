@@ -128,6 +128,7 @@ public class FlexCompilerImpl implements FlexCompiler {
 
         ProjectCacheEntry cacheEntry = PROJECT_CACHE.get(projectFile);
 
+        boolean projectChanges = false;
         try {
             if (cacheEntry == null || projectDao.isProjectModified(cacheEntry.getProject(), projectFile.toURI().toURL())) {
                 try {
@@ -141,6 +142,9 @@ public class FlexCompilerImpl implements FlexCompiler {
                 sortComponents(project.getComponents(), sortedComponentList, componentDependencies, new Stack<Component>());
 
                 PROJECT_CACHE.put(projectFile, new ProjectCacheEntry(project, sortedComponentList, componentDependencies));
+                applicationCache.clear();
+                componentCache.clear();
+                projectChanges = true;
             } else {
                 project = cacheEntry.getProject();
                 sortedComponentList = cacheEntry.getSortedComponents();
@@ -159,7 +163,7 @@ public class FlexCompilerImpl implements FlexCompiler {
         boolean hasErrors = false;
         StringBuilder projectProtocol = new StringBuilder();
         for (Component comp : sortedComponentList) {
-            CompilationResults compilationResults = compile(targetName, project, comp, projectFile.getParentFile(), dstDir, componentDependencies);
+            CompilationResults compilationResults = compile(targetName, project, comp, projectFile.getParentFile(), dstDir, componentDependencies, projectChanges);
             compilationResultses.add(compilationResults);
 
             projectProtocol.append("------------------------------------------------------------- ").append(comp.toString()).append("\n");
@@ -213,7 +217,7 @@ public class FlexCompilerImpl implements FlexCompiler {
         return outputFile;
     }
 
-    protected CompilationResults compile(String targetName, Project project, Component component, File projectDir, String dstDir, Map<Component, Set<Component>> componentDependencies) {
+    protected CompilationResults compile(String targetName, Project project, Component component, File projectDir, String dstDir, Map<Component, Set<Component>> componentDependencies, boolean projectChanges) {
         StringBuilder protocol = new StringBuilder();
 
         long startTime = System.currentTimeMillis();
@@ -221,7 +225,7 @@ public class FlexCompilerImpl implements FlexCompiler {
         String currentPath = targetName;
 
         // detect changes
-        if (targetName != null) {
+        if (targetName != null && !projectChanges) {
             File swf = null;
             if (component instanceof org.oleg.fcs.project.model.Application) {
                 org.oleg.fcs.project.model.Application app = (org.oleg.fcs.project.model.Application) component;
@@ -284,17 +288,19 @@ public class FlexCompilerImpl implements FlexCompiler {
                 }
 
                 flex2.tools.oem.Configuration configuration = flexComponent.getDefaultConfiguration();
-                configure(configuration, new File(projectDir, component.getName()), new File(dstDir), component, componentDependencies.get(component));
+                configure(configuration, new File(projectDir, component.getName()), new File(dstDir), component, componentDependencies.get(component), project, projectDir);
+//                configuration.setIncludes(new String[] {"*.*"});
                 flexComponent.setConfiguration(configuration);
 
-                File mxmlComp = new File(projectDir, component.getName() + File.separator + Constants.ComponentFolders.SRC_DIR);
+                File mxmlComp = new File(projectDir, component.getName() + File.separator + Constants.ComponentFolders.MXML_DIR);
                 if (mxmlComp.exists()) {
                     flexComponent.addComponent(mxmlComp);
                 }
 
-                File srcComp = new File(projectDir, component.getName() + File.separator + Constants.ComponentFolders.MXML_DIR);
+                File srcComp = new File(projectDir, component.getName() + File.separator + Constants.ComponentFolders.SRC_DIR);
                 if (srcComp.exists()) {
                     flexComponent.addComponent(srcComp);
+                    addLibraryAssets(srcComp, "", flexComponent);
                 }
 
                 flexComponent.setOutput(new File(swcTargetDir, component.getName() + ".swc"));
@@ -360,7 +366,7 @@ public class FlexCompilerImpl implements FlexCompiler {
 
                     // TODO: add another (simple) configuration for CSS artifacts
                     flex2.tools.oem.Configuration configuration = application.getDefaultConfiguration();
-                    configure(configuration, new File(projectDir, app.getName()), new File(dstDir), app, componentDependencies.get(component));
+                    configure(configuration, new File(projectDir, app.getName()), new File(dstDir), app, componentDependencies.get(component), project, projectDir);
                     application.setConfiguration(configuration);
 
                     application.setOutput(getArtifactOutputFile(artefact, new File(dstDir)));
@@ -428,6 +434,22 @@ public class FlexCompilerImpl implements FlexCompiler {
         }
     }
 
+    protected void addLibraryAssets(File baseDir, String currPath, Library library) {
+        for (File f : (currPath.equals("") ? baseDir : new File(baseDir, currPath)).listFiles()) {
+            if (f.isDirectory()) {
+                addLibraryAssets(baseDir, currPath + File.separator + f.getName(), library);
+            } else {
+                if (f.getName().endsWith(".css")) {
+                    library.addStyleSheet(f.getName(), f);
+                } else if (f.getName().endsWith(".properties") && currPath.equals("")) {
+                    library.addResourceBundle(f.getName().substring(0, f.getName().lastIndexOf(".")));
+                } else if (!f.getName().endsWith(".as")) {
+                    library.addArchiveFile(f.getName(), f);
+                }
+            }
+        }
+    }
+
     private boolean isModificationsPresent(File path, Date date) {
         for (File f : path.listFiles()) {
             boolean modified = false;
@@ -449,10 +471,21 @@ public class FlexCompilerImpl implements FlexCompiler {
         return false;
     }
 
-    protected void configure(flex2.tools.oem.Configuration configuration, File componentBaseDir, File dstDir, Component component, Set<Component> componentDependencies) {
+    protected void configure(flex2.tools.oem.Configuration configuration, File componentBaseDir, File dstDir, Component component, Set<Component> componentDependencies, Project project, File projectDir) {
         configuration.setConfiguration(new File(frameworksDir, "flex-config.xml"));
         configuration.setLocalFontSnapshot(new File(frameworksDir, conf.getString(ConfigProperties.FLEX_FONTS, Constants.DEFAULT_FLEX_FONTS)));
-        configuration.setLocale(new String[] {"en_US"});
+
+        // Locale
+
+        if (component.getLocales().size() > 0) {
+            configuration.setLocale(component.getLocales().toArray(new String[component.getLocales().size()]));
+        } else if (project.getDefaultLocales().size() > 0) {
+            configuration.setLocale(project.getDefaultLocales().toArray(new String[project.getDefaultLocales().size()]));
+        } else {
+            configuration.setLocale(Constants.DEFAULT_LOCALE);
+        }
+
+        // Sources
 
         List<File> sourcePaths = new ArrayList<File>();
         File mxmlPath = new File(componentBaseDir, Constants.ComponentFolders.MXML_DIR);
@@ -465,6 +498,7 @@ public class FlexCompilerImpl implements FlexCompiler {
         }
         configuration.setSourcePath(sourcePaths.toArray(new File[sourcePaths.size()]));
 
+        // Libraries
         List<File> libs = new ArrayList<File>();
 
         libs.add(new File(frameworksDir, "libs"));
@@ -478,7 +512,7 @@ public class FlexCompilerImpl implements FlexCompiler {
         if (componentDependencies != null && componentDependencies.size() > 0) {
             libs.add(new File(dstDir, Constants.ComponentFolders.SWC_TARGET_DIR));
             for (Component c : componentDependencies) {
-                File compLibDir = new File(componentBaseDir, ".." + File.separator + c.getName() + File.separator + Constants.ComponentFolders.LIB_DIR);
+                File compLibDir = new File(projectDir, c.getName() + File.separator + Constants.ComponentFolders.LIB_DIR);
                 if (compLibDir.exists()) {
                     libs.add(compLibDir);
                 }
@@ -492,7 +526,111 @@ public class FlexCompilerImpl implements FlexCompiler {
             }
         }
 
-        configuration.setLibraryPath(libs.toArray(new File[libs.size()]));
+        configuration.addLibraryPath(libs.toArray(new File[libs.size()]));
+
+        // Themes
+
+        if (component instanceof org.oleg.fcs.project.model.Application) {
+            List<Theme> themesDefifitions = ((org.oleg.fcs.project.model.Application) component).getThemes();
+            if (themesDefifitions == null || themesDefifitions.size() == 0) {
+                themesDefifitions = project.getDefaultThemes();
+            }
+
+            if (themesDefifitions != null && themesDefifitions.size() > 0) {
+                List<File> themeFiles = new ArrayList<File>();
+
+                for (Theme theme : themesDefifitions) {
+                    switch (theme.getType()) {
+                        case component:
+                            themeFiles.add(new File(dstDir, Constants.ComponentFolders.SWC_TARGET_DIR + File.separator + theme.getName() + (theme.getName().endsWith(".swc") ? "" : ".swc")));
+                            break;
+                        case lib:
+                            String fileName = theme.getName() + (theme.getName().endsWith(".swc") ? "" : ".swc");
+                            boolean found = false;
+
+                            File compLibDir = new File(componentBaseDir, Constants.ComponentFolders.LIB_DIR);
+                            if (compLibDir.exists() && hasFile(compLibDir, fileName)) {
+                                themeFiles.add(new File(compLibDir, fileName));
+                                found = true;
+                            } else {
+                                for (Component c : componentDependencies) {
+                                    compLibDir = new File(projectDir, c.getName() + File.separator + Constants.ComponentFolders.LIB_DIR);
+                                    if (compLibDir.exists() && hasFile(compLibDir, fileName)) {
+                                        themeFiles.add(new File(compLibDir, fileName));
+                                        found = true;
+                                        break;
+                                    }
+                                }
+                            }
+
+                            if (!found) {
+                                throw new ProjectException("Can't find theme library in the buid path: " + fileName);
+                            }
+                            break;
+                        case file:
+                            if (new File(theme.getName()).isAbsolute()) {
+                                themeFiles.add(new File(theme.getName()));
+                            } else {
+                                themeFiles.add(new File(componentBaseDir, theme.getName()));
+                            }
+                            break;
+                        case builtin:
+                            File themeDir = new File(frameworksDir, "themes" + File.separator + theme.getName());
+                            if (!themeDir.exists()) {
+                                throw new ProjectException("Unable to find buitin theme with name " + theme.getName());
+                            }
+
+                            boolean themeFileFound = false;
+                            for (File themeFile : themeDir.listFiles()) {
+                                if (themeFile.isFile() && (themeFile.getName().endsWith(".css") || themeFile.getName().endsWith(".swc"))) {
+                                    themeFiles.add(themeFile);
+                                    themeFileFound = true;
+                                    break;
+                                }
+                            }
+
+                            if (!themeFileFound) {
+                                throw new ProjectException("Unable to find any sutable theme files for the builtin theme " + theme.getName());
+                            }
+                            break;
+                    }
+                }
+
+                configuration.addTheme(themeFiles.toArray(new File[themeFiles.size()]));
+            }
+        }
+
+        // project and component flex config
+
+        addFlexConfig(projectDir, project.getDefaultFlexConfig(), configuration);
+        addFlexConfig(componentBaseDir, component.getFlexConfig(), configuration);
+    }
+
+    protected boolean hasFile(File dir, String fileName) {
+        boolean found = false;
+
+        for (File f : dir.listFiles()) {
+            if (f.getName().equals(fileName)) {
+                found = true;
+                break;
+            }
+        }
+        return found;
+    }
+
+    protected void addFlexConfig(File basePath, String userPath, flex2.tools.oem.Configuration configuration) {
+        if (userPath != null && !userPath.trim().equals("")) {
+            if (new File(userPath).isAbsolute()) {
+                configuration.addConfiguration(new File(userPath));
+            } else {
+                configuration.addConfiguration(new File(basePath, userPath));
+            }
+        } else {
+            File defaultConfig = new File(basePath, Constants.DEFAULT_FLEX_CONFIG_FILE_NAME);
+            if (defaultConfig.exists()) {
+                configuration.addConfiguration(defaultConfig);
+            }
+        }
     }
 
     protected String toString(Message[] messages) {

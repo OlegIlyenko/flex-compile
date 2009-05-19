@@ -11,6 +11,10 @@ public class Component {
 
     private String name;
 
+    private String flexConfig;
+
+    private List<String> locales;
+
     private List<Dependency> dependencies;
 
     public String getName() {
@@ -27,6 +31,22 @@ public class Component {
 
     public void setDependencies(List<Dependency> dependencies) {
         this.dependencies = dependencies;
+    }
+
+    public List<String> getLocales() {
+        return locales;
+    }
+
+    public void setLocales(List<String> locales) {
+        this.locales = locales;
+    }
+
+    public String getFlexConfig() {
+        return flexConfig;
+    }
+
+    public void setFlexConfig(String flexConfig) {
+        this.flexConfig = flexConfig;
     }
 
     @Override

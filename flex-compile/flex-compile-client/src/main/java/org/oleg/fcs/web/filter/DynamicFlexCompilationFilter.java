@@ -139,6 +139,7 @@ public class DynamicFlexCompilationFilter implements Filter {
             results = compiler.compile(currentBaseName, flexProject, targetDir.getAbsolutePath());
         } catch (Exception e) {
             log.error("Error during compillation.", e);
+            throw new ServletException(e);
         }
 
         boolean hasErrors = false;
