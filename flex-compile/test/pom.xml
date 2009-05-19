@@ -13,7 +13,6 @@
         <url>http://code.google.com/p/flex-compile/source/browse/</url>
     </scm>
 
-
     <developers>
         <developer>
             <id>oleg.ilyenko</id>
@@ -57,6 +56,14 @@
             </plugin>
 
         </plugins>
+
+        <extensions>
+            <extension>
+                <groupId>org.jvnet.wagon-svn</groupId>
+                <artifactId>wagon-svn</artifactId>
+                <version>1.8</version>
+            </extension>
+        </extensions>
     </build>
 
     <dependencyManagement>
@@ -167,6 +174,20 @@
         </dependency>
     </dependencies>
 
+    <distributionManagement>
+        <repository>
+            <id>flex-compile-maven-repo</id>
+            <url>svn:https://flex-compile.googlecode.com/svn/trunk/flex-compile-repo</url>
+            <uniqueVersion>true</uniqueVersion>
+        </repository>
+        <!--
+        <site>
+            <id>flex-compile-maven-site-repo</id>
+            <url>svn:https://flex-compile.googlecode.com/svn/trunk/flex-compile-site-repo</url>
+        </site>
+        -->
+    </distributionManagement>
+
     <repositories>
         <repository>
             <id>flex-mojos-repository</id>
@@ -187,6 +208,11 @@
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
+        </repository>
+        <repository>
+            <id>maven2-repository.dev.java.net</id>
+            <name>Java.net Repository for Maven</name>
+            <url>http://download.java.net/maven/2/</url>
         </repository>
     </repositories>
 
