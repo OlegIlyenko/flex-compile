@@ -177,15 +177,14 @@
     <distributionManagement>
         <repository>
             <id>flex-compile-maven-repo</id>
-            <url>svn:https://flex-compile.googlecode.com/svn/trunk/flex-compile-repo</url>
+            <url>${flex-compile.repo}</url>
             <uniqueVersion>true</uniqueVersion>
         </repository>
-        <!--
+
         <site>
             <id>flex-compile-maven-site-repo</id>
-            <url>svn:https://flex-compile.googlecode.com/svn/trunk/flex-compile-site-repo</url>
+            <url>${flex-compile.site-repo}</url>
         </site>
-        -->
     </distributionManagement>
 
     <repositories>
