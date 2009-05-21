@@ -18,6 +18,7 @@
   * Localization support
   * Updated documentation
   * Example project and server configuration added to the documentation
+  * Maven repository created
 
 ===Version 1.0-SNAPSHOT=== 
 
