@@ -508,7 +508,6 @@
             &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
         &lt;/dependency&gt;
     &lt;/dependencies&gt;
-
     <b style="color:black;">
     &lt;build&gt;
         &lt;plugins&gt;
@@ -536,27 +535,25 @@
             &lt;/plugin&gt;
         &lt;/plugins&gt;
     &lt;/build&gt;
+
+    &lt;repositories&gt;
+        &lt;repository&gt;
+            &lt;id&gt;flex-compile-repository&lt;/id&gt;
+            &lt;url&gt;http://flex-compile.googlecode.com/svn/trunk/flex-compile-repo&lt;/url&gt;
+            &lt;releases&gt;
+                &lt;enabled&gt;true&lt;/enabled&gt;
+            &lt;/releases&gt;
+            &lt;snapshots&gt;
+                &lt;enabled&gt;true&lt;/enabled&gt;
+            &lt;/snapshots&gt;
+        &lt;/repository&gt;
+    &lt;/repositories&gt;
     </b>
 &lt;/project&gt;</pre>
 </p>
 
-<p>
-    Since <b>flex-compile</b> project is not present in any maven repository, you have two options, if you want to use Maven 2 plugin.
-
-    At first, you can checkout project with <b>svn</b> like this:
-    <pre>svn checkout http://flex-compile.googlecode.com/svn/trunk/ flex-compile-read-only</pre>
-
-    and they build it and install to the local maven repository with following command:
-    <pre>mvn install</pre>
-</p>
-
-<p>
-    You can also add all artifacts to the repository manually. You can make this by executing following commands in the lib directory of <b>flex-compile</b> project distribution:
-    <pre>mvn install:install-file -DgroupId=org.oleg -DartifactId=flex-compile-common -Dversion=${project.version} -Dpackaging=jar -Dfile=flex-compile-common-${project.version}.jar
-mvn install:install-file -DgroupId=org.oleg -DartifactId=flex-compile-server -Dversion=${project.version} -Dpackaging=jar -Dfile=flex-compile-server-${project.version}.jar
-mvn install:install-file -DgroupId=org.oleg -DartifactId=flex-compile-client -Dversion=${project.version} -Dpackaging=jar -Dfile=flex-compile-client-${project.version}.jar
-mvn install:install-file -DgroupId=org.oleg -DartifactId=flex-compile-maven2-plugin -Dversion=${project.version} -Dpackaging=maven-plugin -Dfile=flex-compile-maven2-plugin-${project.version}.jar
-</pre>
+<p class="note">
+    It's important to add <b>flex-compile maven reporitory</b> to the repository list, because it still not present in the global repositories.
 </p>
 
 <p>
