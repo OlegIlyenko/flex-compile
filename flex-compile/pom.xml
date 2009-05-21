@@ -4,7 +4,7 @@
     <groupId>org.oleg</groupId>
     <artifactId>flex-compile</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-beta-1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
     <name>Flex Compile</name>
 
     <url>http://code.google.com/p/flex-compile/</url>
