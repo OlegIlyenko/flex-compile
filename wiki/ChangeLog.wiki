@@ -1,0 +1,24 @@
+#labels changelog,Featured
+*Current stable version:* 1.0-beta
+
+==Plans for the next release (1.0):==
+
+  * Document Java API Usage
+  * Support of RSL (Runtime shared library)
+
+==Change Log :==
+
+===Version 1.0-beta===
+
+  * Support of themes 
+  * Support of Flex 4 (Gumbo)
+  * additional flex config xml file in app and comp settings 
+  * on server exception lost connention and no reconnection 
+  * Improved component modules 
+  * Localization support
+  * Updated documentation
+  * Example project and server configuration added to the documentation
+
+===Version 1.0-SNAPSHOT=== 
+
+Initial release
