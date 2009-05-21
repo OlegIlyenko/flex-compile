@@ -588,7 +588,7 @@
     <tr>
         <td>warTargetDirectory</td>
         <td>String</td>
-        <td>${project.build.directory}/${project.artifactId}-${project.version}/</td>
+        <td>projectBuildDirectory/projectArtifactId-projectVersion/</td>
         <td>false</td>
         <td>The target directory, where all flex compilation artifacts go</td>
     </tr>
@@ -616,7 +616,7 @@
     <tr>
         <td>compilerPropertiesFile</td>
         <td>String</td>
-        <td>${basedir}/flex-compile.properties</td>
+        <td>ProjectBasedir/flex-compile.properties</td>
         <td>false</td>
         <td>Server configuration properties file. Will be used if server is not available and local compilation should be performed</td>
     </tr>
@@ -632,7 +632,7 @@
     <tr>
         <td>projectLocation</td>
         <td>String</td>
-        <td>${basedir}/src/main/flex/</td>
+        <td>ProjectBasedir/src/main/flex/</td>
         <td>false</td>
         <td>The flex project folder of XML file. If folder would be provided, then file named <b>flex-project.xml</b> wild be searched in it.</td>
     </tr>
