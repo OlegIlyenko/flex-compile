@@ -9,6 +9,12 @@
 
     <url>http://code.google.com/p/flex-compile/</url>
 
+    <scm>
+        <connection>scm:svn:https://flex-compile.googlecode.com/svn/trunk/flex-compile</connection>
+        <developerConnection>scm:svn:https://flex-compile.googlecode.com/svn/trunk/flex-compile</developerConnection>
+        <url>http://code.google.com/p/flex-compile/source/browse/trunk/flex-compile</url>
+    </scm>
+
     <developers>
         <developer>
             <id>oleg.ilyenko</id>
@@ -20,6 +26,11 @@
             </roles>
         </developer>
     </developers>
+
+    <issueManagement>
+        <system>Google Code</system>
+        <url>http://code.google.com/p/flex-compile/issues/list</url>
+    </issueManagement>
 
     <modules>
         <module>flex-compile-server</module>
@@ -55,6 +66,21 @@
                 </executions>
             </plugin>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-plugin</artifactId>
+                <configuration>
+                    <username>${flex-compile.user}</username>
+                    <password>${flex-compile.password}</password>
+                </configuration>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.0-beta-9</version>
+            </plugin>
         </plugins>
     </build>
 
@@ -185,6 +211,19 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>flex-compile-maven-repo</id>
+            <url>${flex-compile.repo}</url>
+            <uniqueVersion>true</uniqueVersion>
+        </repository>
+
+        <site>
+            <id>flex-compile-maven-site-repo</id>
+            <url>${flex-compile.site-repo}</url>
+        </site>
+    </distributionManagement>
 
     <repositories>
         <repository>
