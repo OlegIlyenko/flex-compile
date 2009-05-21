@@ -1,0 +1,30 @@
+-classpath
+'D:/Temp/10things/target/checkout/flex-compile-maven2-plugin/target/classes;D:/Java/maven_repo/log4j/log4j/1.2.14/log4j-1.2.14.jar;D:/Java/maven_repo/com/adobe/batik/batik-ext/3.0.0.3.0.0.477/batik-ext-3.0.0.3.0.0.477.jar;D:/Java/maven_repo/com/adobe/batik/batik-script/3.0.0.3.0.0.477/batik-script-3.0.0.3.0.0.477.jar;D:/Java/maven_repo/com/adobe/flex/messaging-common/3.0.1.1414/messaging-common-3.0.1.1414.jar;D:/Java/maven_repo/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar;D:/Java/maven_repo/com/adobe/batik/batik-svg-dom/3.0.0.3.0.0.477/batik-svg-dom-3.0.0.3.0.0.477.jar;D:/Java/maven_repo/com/adobe/velocity/mm-velocity/1.4/mm-velocity-1.4.jar;D:/Java/maven_repo/com/adobe/batik/batik-util/3.0.0.3.0.0.477/batik-util-3.0.0.3.0.0.477.jar;D:/Java/maven_repo/org/apache/maven/maven-project/2.0.9/maven-project-2.0.9.jar;D:/Java/maven_repo/com/adobe/batik/batik-xml/3.0.0.3.0.0.477/batik-xml-3.0.0.3.0.0.477.jar;D:/Java/maven_repo/com/adobe/batik/batik-bridge/3.0.0.3.0.0.477/batik-bridge-3.0.0.3.0.0.477.jar;D:/Java/maven_repo/org/apache/maven/maven-settings/2.0.9/maven-settings-2.0.9.jar;D:/Java/maven_repo/org/apache/maven/maven-artifact/2.0.9/maven-artifact-2.0.9.jar;D:/Java/maven_repo/org/apache/maven/wagon/wagon-provider-api/1.0-beta-2/wagon-provider-api-1.0-beta-2.jar;D:/Java/maven_repo/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar;D:/Java/maven_repo/com/adobe/batik/batik-css/3.0.0.3.0.0.477/batik-css-3.0.0.3.0.0.477.jar;D:/Java/maven_repo/commons-logging/commons-logging/1.1/commons-logging-1.1.jar;D:/Java/maven_repo/org/codehaus/plexus/plexus-utils/1.5.1/plexus-utils-1.5.1.jar;D:/Java/maven_repo/org/apache/maven/maven-model/2.0.9/maven-model-2.0.9.jar;D:/Java/maven_repo/org/codehaus/woodstox/wstx-asl/4.0.0/wstx-asl-4.0.0.jar;D:/Java/maven_repo/org/codehaus/woodstox/stax2-api/3.0.1/stax2-api-3.0.1.jar;D:/Java/maven_repo/com/adobe/batik/batik-parser/3.0.0.3.0.0.477/batik-parser-3.0.0.3.0.0.477.jar;D:/Java/maven_repo/com/adobe/xerces/xercesPatch/3.0.0.3.0.0.477/xercesPatch-3.0.0.3.0.0.477.jar;D:/Java/maven_repo/org/apache/maven/maven-profile/2.0.9/maven-profile-2.0.9.jar;D:/Java/maven_repo/stax/stax-api/1.0.1/stax-api-1.0.1.jar;D:/Java/maven_repo/com/adobe/batik/batik-gvt/3.0.0.3.0.0.477/batik-gvt-3.0.0.3.0.0.477.jar;D:/Java/maven_repo/macromedia/asc/3.0.1.1728/asc-3.0.1.1728.jar;D:/Java/maven_repo/org/apache/maven/maven-repository-metadata/2.0.9/maven-repository-metadata-2.0.9.jar;D:/Java/maven_repo/com/adobe/batik/batik-dom/3.0.0.3.0.0.477/batik-dom-3.0.0.3.0.0.477.jar;D:/Java/maven_repo/org/apache/maven/maven-artifact-manager/2.0.9/maven-artifact-manager-2.0.9.jar;D:/Java/maven_repo/com/adobe/flex/swfutil/3.0.1.1728/swfutil-3.0.1.1728.jar;D:/Java/maven_repo/org/apache/maven/maven-plugin-registry/2.0.9/maven-plugin-registry-2.0.9.jar;D:/Temp/10things/target/checkout/flex-compile-server/target/flex-compile-server-1.0-beta.jar;D:/Java/maven_repo/com/adobe/batik/batik-svggen/3.0.0.3.0.0.477/batik-svggen-3.0.0.3.0.0.477.jar;D:/Temp/10things/target/checkout/flex-compile-common/target/flex-compile-common-1.0-beta.jar;D:/Temp/10things/target/checkout/flex-compile-client/target/flex-compile-client-1.0-beta.jar;D:/Java/maven_repo/com/adobe/flex/compc/3.0.1.1728/compc-3.0.1.1728.jar;D:/Java/maven_repo/org/apache/maven/maven-plugin-api/2.0.9/maven-plugin-api-2.0.9.jar;D:/Java/maven_repo/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar;D:/Java/maven_repo/com/adobe/xerces/xerces/2.4.0/xerces-2.4.0.jar;D:/Java/maven_repo/org/apache/maven/shared/maven-verifier/1.0/maven-verifier-1.0.jar;D:/Java/maven_repo/com/adobe/commons-collections/commons-collections/2.1/commons-collections-2.1.jar;D:/Java/maven_repo/com/adobe/flex/mxmlc/3.0.1.1728/mxmlc-3.0.1.1728.jar;D:/Java/maven_repo/com/adobe/batik/batik-transcoder/3.0.0.3.0.0.477/batik-transcoder-3.0.0.3.0.0.477.jar;D:/Java/maven_repo/com/adobe/flex/flex-compiler-oem/3.0.1.1728/flex-compiler-oem-3.0.1.1728.jar'
+-encoding
+'Cp1252'
+-protected
+-sourcepath
+'D:/Temp/10things/target/checkout/flex-compile-maven2-plugin/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2009. All Rights Reserved.'
+-charset
+'UTF-8'
+-d
+'D:/Temp/10things/target/checkout/flex-compile-maven2-plugin/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Flex Compile - Maven2 plugin for web projects 1.0-beta API'
+-link
+'http://java.sun.com/j2se/1.4.2/docs/api'
+-linkoffline
+'http://code.google.com/p/flex-compile/flex-compile-common/apidocs' 'D:/Temp/10things/target/checkout/flex-compile-common/target/site/apidocs'
+-linkoffline
+'http://code.google.com/p/flex-compile/flex-compile-server/apidocs' 'D:/Temp/10things/target/checkout/flex-compile-server/target/site/apidocs'
+-linkoffline
+'http://code.google.com/p/flex-compile/flex-compile-client/apidocs' 'D:/Temp/10things/target/checkout/flex-compile-client/target/site/apidocs'
+-use
+-version
+-windowtitle
+'Flex Compile - Maven2 plugin for web projects 1.0-beta API'

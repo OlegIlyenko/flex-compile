@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<rss version="0.91">
+  <channel>
+    <title>Flex Compile Server - Checkstyle report</title>
+    <link>http://code.google.com/p/flex-compile/flex-compile-server</link>
+    <description>Flex Compile Server - Checkstyle report</description>
+    <language>en-us</language>
+    <copyright>&#169;2009</copyright>
+    <item>
+      <title>File: 32,
+             Errors: 1117,
+             Warnings: 0,
+             Infos: 0
+      </title>
+            <link>http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html</link>
+      <description>
+        <p>Click <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html">here</a> for the full Checkstyle report.</p>
+
+        <table summary="Files" boder="1">
+          <thead>
+            <tr>
+              <th>Files</th>
+              <th style="width:30px;"><abbr title="Info">I</abbr></th>
+              <th style="width:30px;"><abbr title="Warning">W</abbr></th>
+              <th style="width:30px;"><abbr title="Error">E</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.project.dao.ProjectException.java">org/oleg/fcs/project/dao/ProjectException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  10
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.util.package.html">org/oleg/fcs/util/package.html</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.compiler.listener.LogListener.java">org/oleg/fcs/compiler/listener/LogListener.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  9
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.project.model.Component.java">org/oleg/fcs/project/model/Component.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  55
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.runner.CompilationServer.java">org/oleg/fcs/runner/CompilationServer.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  17
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.project.dao.package.html">org/oleg/fcs/project/dao/package.html</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.event.Event.java">org/oleg/fcs/event/Event.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  22
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.compiler.listener.package.html">org/oleg/fcs/compiler/listener/package.html</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.project.model.package.html">org/oleg/fcs/project/model/package.html</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.project.model.Theme.java">org/oleg/fcs/project/model/Theme.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  23
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.project.dao.impl.package.html">org/oleg/fcs/project/dao/impl/package.html</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.project.dao.ProjectDao.java">org/oleg/fcs/project/dao/ProjectDao.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  7
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.project.dao.impl.XmlProjectDaoImpl.java">org/oleg/fcs/project/dao/impl/XmlProjectDaoImpl.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  81
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.util.FlexUtil.java">org/oleg/fcs/util/FlexUtil.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  17
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.project.model.Dependency.java">org/oleg/fcs/project/model/Dependency.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  16
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.compiler.FlexCompilerImpl.java">org/oleg/fcs/compiler/FlexCompilerImpl.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  447
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.event.EventDispatcher.java">org/oleg/fcs/event/EventDispatcher.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  38
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.event.EventListener.java">org/oleg/fcs/event/EventListener.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.ui.package.html">org/oleg/fcs/ui/package.html</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.server.CompillerServer.java">org/oleg/fcs/server/CompillerServer.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  31
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.ui.FileViewer.java">org/oleg/fcs/ui/FileViewer.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  44
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.compiler.CompilerEvent.java">org/oleg/fcs/compiler/CompilerEvent.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  62
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.server.package.html">org/oleg/fcs/server/package.html</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.event.EventProducer.java">org/oleg/fcs/event/EventProducer.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  5
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.compiler.package.html">org/oleg/fcs/compiler/package.html</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.project.model.Application.java">org/oleg/fcs/project/model/Application.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  36
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.runner.package.html">org/oleg/fcs/runner/package.html</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.project.model.Artefact.java">org/oleg/fcs/project/model/Artefact.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  24
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.project.model.Project.java">org/oleg/fcs/project/model/Project.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  73
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.event.package.html">org/oleg/fcs/event/package.html</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.compiler.listener.TrayListener.java">org/oleg/fcs/compiler/listener/TrayListener.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  74
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://code.google.com/p/flex-compile/flex-compile-server/checkstyle.html#org.oleg.fcs.server.ConfigProperties.java">org/oleg/fcs/server/ConfigProperties.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  13
+                </td>
+              </tr>
+                      </tbody>
+        </table>
+        
+      </description>
+    </item>
+  </channel>
+</rss>
+

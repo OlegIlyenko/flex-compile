@@ -1,0 +1,752 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Flex Compile Server - JDepend Report Metrics</title>
+    <style type="text/css" media="all">
+      @import url("./css/maven-base.css");
+      @import url("./css/maven-theme.css");
+      @import url("./css/site.css");
+    </style>
+    <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <div id="banner">
+                    <span id="bannerLeft">
+    
+            Flex Compile Server
+    
+            </span>
+                    <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+    
+            <div class="xleft">
+        Last Published: 2009-05-21
+                      </div>
+            <div class="xright">            <a href="">Flex Compile Server</a>
+            
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+    
+                             <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="project-info.html">Project Information</a>
+                </li>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+            
+            
+      
+            
+      
+            
+      
+            
+      
+              
+            <li class="expanded">
+                    <a href="project-reports.html">Project Reports</a>
+                  <ul>
+                  
+    <li class="none">
+                    <a href="checkstyle.html">Checkstyle</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="cobertura/index.html">Cobertura Test Coverage</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="cpd.html">CPD Report</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="apidocs/index.html">JavaDocs</a>
+          </li>
+                  
+    <li class="none">
+              <strong>JDepend</strong>
+        </li>
+                  
+    <li class="none">
+                    <a href="pmd.html">PMD Report</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="xref/index.html">Source Xref</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="surefire-report.html">Surefire Report</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="taglist.html">Tag List</a>
+          </li>
+              </ul>
+        </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="./images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2>Metric Results</h2>
+[ <a href="#summary">summary</a> ] [ <a href="#packages">packages</a> ] [ <a href="#cycles">cycles</a> ] [ <a href="#explanations">explanations</a> ] <br />
+<br />
+The following document contains the results of a JDepend metric analysis. The various metrics are defined at the bottom of this document.<br />
+<br />
+<a name="summary"></a><h2>Summary</h2>
+[ <a href="#summary">summary</a> ] [ <a href="#packages">packages</a> ] [ <a href="#cycles">cycles</a> ] [ <a href="#explanations">explanations</a> ] <br />
+<br />
+<table class="bodyTable"><tr class="a"><th>Package</th>
+<th>TC</th>
+<th>CC</th>
+<th>AC</th>
+<th>Ca</th>
+<th>Ce</th>
+<th>A</th>
+<th>I</th>
+<th>D</th>
+<th>V</th>
+</tr>
+<tr class="b"><td><a href="#org.oleg.fcs.compiler">org.oleg.fcs.compiler</a></td>
+<td>6</td>
+<td>6</td>
+<td>0</td>
+<td>2</td>
+<td>13</td>
+<td>0.0%</td>
+<td>87.0%</td>
+<td>13.0%</td>
+<td>1</td>
+</tr>
+<tr class="a"><td><a href="#org.oleg.fcs.compiler.listener">org.oleg.fcs.compiler.listener</a></td>
+<td>8</td>
+<td>8</td>
+<td>0</td>
+<td>1</td>
+<td>11</td>
+<td>0.0%</td>
+<td>92.0%</td>
+<td>8.0%</td>
+<td>1</td>
+</tr>
+<tr class="b"><td><a href="#org.oleg.fcs.event">org.oleg.fcs.event</a></td>
+<td>4</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td>50.0%</td>
+<td>40.0%</td>
+<td>10.0%</td>
+<td>1</td>
+</tr>
+<tr class="a"><td><a href="#org.oleg.fcs.project.dao">org.oleg.fcs.project.dao</a></td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>4</td>
+<td>50.0%</td>
+<td>67.0%</td>
+<td>17.0%</td>
+<td>1</td>
+</tr>
+<tr class="b"><td><a href="#org.oleg.fcs.project.dao.impl">org.oleg.fcs.project.dao.impl</a></td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>7</td>
+<td>0.0%</td>
+<td>88.0%</td>
+<td>12.0%</td>
+<td>1</td>
+</tr>
+<tr class="a"><td><a href="#org.oleg.fcs.project.model">org.oleg.fcs.project.model</a></td>
+<td>8</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>2</td>
+<td>0.0%</td>
+<td>40.0%</td>
+<td>60.000004%</td>
+<td>1</td>
+</tr>
+<tr class="b"><td><a href="#org.oleg.fcs.runner">org.oleg.fcs.runner</a></td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>12</td>
+<td>0.0%</td>
+<td>100.0%</td>
+<td>0.0%</td>
+<td>1</td>
+</tr>
+<tr class="a"><td><a href="#org.oleg.fcs.server">org.oleg.fcs.server</a></td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>7</td>
+<td>33.0%</td>
+<td>88.0%</td>
+<td>21.0%</td>
+<td>1</td>
+</tr>
+<tr class="b"><td><a href="#org.oleg.fcs.ui">org.oleg.fcs.ui</a></td>
+<td>8</td>
+<td>8</td>
+<td>0</td>
+<td>1</td>
+<td>8</td>
+<td>0.0%</td>
+<td>89.0%</td>
+<td>11.0%</td>
+<td>1</td>
+</tr>
+<tr class="a"><td><a href="#org.oleg.fcs.util">org.oleg.fcs.util</a></td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>2</td>
+<td>4</td>
+<td>0.0%</td>
+<td>67.0%</td>
+<td>33.0%</td>
+<td>1</td>
+</tr>
+</table>
+<a name="packages"></a><h2>Packages</h2>
+[ <a href="#summary">summary</a> ] [ <a href="#packages">packages</a> ] [ <a href="#cycles">cycles</a> ] [ <a href="#explanations">explanations</a> ] <br />
+<a name="org.oleg.fcs.compiler"></a><h3>org.oleg.fcs.compiler</h3>
+<table class="bodyTable"><tr class="b"><th>Afferent Couplings</th>
+<th>Efferent Couplings</th>
+<th>Abstractness</th>
+<th>Instability</th>
+<th>Distance</th>
+</tr>
+<tr class="a"><td>2</td>
+<td>13</td>
+<td>0.0%</td>
+<td>87.0%</td>
+<td>13.0%</td>
+</tr>
+</table>
+<table class="bodyTable"><tr class="b"><th>Abstract Classes</th>
+<th>Concrete Classes</th>
+<th>Used by Packages</th>
+<th>Uses Packages</th>
+</tr>
+<tr class="a"><td><i>None</i></td>
+<td>org.oleg.fcs.compiler.CompilerEvent<br />
+org.oleg.fcs.compiler.CompilerEvent$EventType<br />
+org.oleg.fcs.compiler.FlexCompilerImpl<br />
+org.oleg.fcs.compiler.FlexCompilerImpl$1<br />
+org.oleg.fcs.compiler.FlexCompilerImpl$ProgressTracker<br />
+org.oleg.fcs.compiler.FlexCompilerImpl$ProjectCacheEntry<br />
+</td>
+<td>org.oleg.fcs.compiler.listener<br />
+org.oleg.fcs.runner<br />
+</td>
+<td>flex2.tools.oem<br />
+java.io<br />
+java.lang<br />
+java.net<br />
+java.util<br />
+org.apache.commons.logging<br />
+org.oleg.fcs<br />
+org.oleg.fcs.api<br />
+org.oleg.fcs.event<br />
+org.oleg.fcs.helper<br />
+org.oleg.fcs.project.dao<br />
+org.oleg.fcs.project.model<br />
+org.oleg.fcs.util<br />
+</td>
+</tr>
+</table>
+<a name="org.oleg.fcs.compiler.listener"></a><h3>org.oleg.fcs.compiler.listener</h3>
+<table class="bodyTable"><tr class="b"><th>Afferent Couplings</th>
+<th>Efferent Couplings</th>
+<th>Abstractness</th>
+<th>Instability</th>
+<th>Distance</th>
+</tr>
+<tr class="a"><td>1</td>
+<td>11</td>
+<td>0.0%</td>
+<td>92.0%</td>
+<td>8.0%</td>
+</tr>
+</table>
+<table class="bodyTable"><tr class="b"><th>Abstract Classes</th>
+<th>Concrete Classes</th>
+<th>Used by Packages</th>
+<th>Uses Packages</th>
+</tr>
+<tr class="a"><td><i>None</i></td>
+<td>org.oleg.fcs.compiler.listener.LogListener<br />
+org.oleg.fcs.compiler.listener.TrayListener<br />
+org.oleg.fcs.compiler.listener.TrayListener$1<br />
+org.oleg.fcs.compiler.listener.TrayListener$2<br />
+org.oleg.fcs.compiler.listener.TrayListener$3<br />
+org.oleg.fcs.compiler.listener.TrayListener$4<br />
+org.oleg.fcs.compiler.listener.TrayListener$5<br />
+org.oleg.fcs.compiler.listener.TrayListener$6<br />
+</td>
+<td>org.oleg.fcs.runner<br />
+</td>
+<td>java.awt<br />
+java.awt.event<br />
+java.io<br />
+java.lang<br />
+javax.swing<br />
+org.apache.commons.logging<br />
+org.oleg.fcs.api<br />
+org.oleg.fcs.compiler<br />
+org.oleg.fcs.event<br />
+org.oleg.fcs.helper<br />
+org.oleg.fcs.ui<br />
+</td>
+</tr>
+</table>
+<a name="org.oleg.fcs.event"></a><h3>org.oleg.fcs.event</h3>
+<table class="bodyTable"><tr class="b"><th>Afferent Couplings</th>
+<th>Efferent Couplings</th>
+<th>Abstractness</th>
+<th>Instability</th>
+<th>Distance</th>
+</tr>
+<tr class="a"><td>3</td>
+<td>2</td>
+<td>50.0%</td>
+<td>40.0%</td>
+<td>10.0%</td>
+</tr>
+</table>
+<table class="bodyTable"><tr class="b"><th>Abstract Classes</th>
+<th>Concrete Classes</th>
+<th>Used by Packages</th>
+<th>Uses Packages</th>
+</tr>
+<tr class="a"><td>org.oleg.fcs.event.EventListener<br />
+org.oleg.fcs.event.EventProducer<br />
+</td>
+<td>org.oleg.fcs.event.Event<br />
+org.oleg.fcs.event.EventDispatcher<br />
+</td>
+<td>org.oleg.fcs.compiler<br />
+org.oleg.fcs.compiler.listener<br />
+org.oleg.fcs.runner<br />
+</td>
+<td>java.lang<br />
+java.util<br />
+</td>
+</tr>
+</table>
+<a name="org.oleg.fcs.project.dao"></a><h3>org.oleg.fcs.project.dao</h3>
+<table class="bodyTable"><tr class="b"><th>Afferent Couplings</th>
+<th>Efferent Couplings</th>
+<th>Abstractness</th>
+<th>Instability</th>
+<th>Distance</th>
+</tr>
+<tr class="a"><td>2</td>
+<td>4</td>
+<td>50.0%</td>
+<td>67.0%</td>
+<td>17.0%</td>
+</tr>
+</table>
+<table class="bodyTable"><tr class="b"><th>Abstract Classes</th>
+<th>Concrete Classes</th>
+<th>Used by Packages</th>
+<th>Uses Packages</th>
+</tr>
+<tr class="a"><td>org.oleg.fcs.project.dao.ProjectDao<br />
+</td>
+<td>org.oleg.fcs.project.dao.ProjectException<br />
+</td>
+<td>org.oleg.fcs.compiler<br />
+org.oleg.fcs.project.dao.impl<br />
+</td>
+<td>java.io<br />
+java.lang<br />
+java.net<br />
+org.oleg.fcs.project.model<br />
+</td>
+</tr>
+</table>
+<a name="org.oleg.fcs.project.dao.impl"></a><h3>org.oleg.fcs.project.dao.impl</h3>
+<table class="bodyTable"><tr class="b"><th>Afferent Couplings</th>
+<th>Efferent Couplings</th>
+<th>Abstractness</th>
+<th>Instability</th>
+<th>Distance</th>
+</tr>
+<tr class="a"><td>1</td>
+<td>7</td>
+<td>0.0%</td>
+<td>88.0%</td>
+<td>12.0%</td>
+</tr>
+</table>
+<table class="bodyTable"><tr class="b"><th>Abstract Classes</th>
+<th>Concrete Classes</th>
+<th>Used by Packages</th>
+<th>Uses Packages</th>
+</tr>
+<tr class="a"><td><i>None</i></td>
+<td>org.oleg.fcs.project.dao.impl.XmlProjectDaoImpl<br />
+</td>
+<td>org.oleg.fcs.runner<br />
+</td>
+<td>java.io<br />
+java.lang<br />
+java.net<br />
+java.util<br />
+javax.xml.stream<br />
+org.oleg.fcs.project.dao<br />
+org.oleg.fcs.project.model<br />
+</td>
+</tr>
+</table>
+<a name="org.oleg.fcs.project.model"></a><h3>org.oleg.fcs.project.model</h3>
+<table class="bodyTable"><tr class="b"><th>Afferent Couplings</th>
+<th>Efferent Couplings</th>
+<th>Abstractness</th>
+<th>Instability</th>
+<th>Distance</th>
+</tr>
+<tr class="a"><td>3</td>
+<td>2</td>
+<td>0.0%</td>
+<td>40.0%</td>
+<td>60.000004%</td>
+</tr>
+</table>
+<table class="bodyTable"><tr class="b"><th>Abstract Classes</th>
+<th>Concrete Classes</th>
+<th>Used by Packages</th>
+<th>Uses Packages</th>
+</tr>
+<tr class="a"><td><i>None</i></td>
+<td>org.oleg.fcs.project.model.Application<br />
+org.oleg.fcs.project.model.Artefact<br />
+org.oleg.fcs.project.model.Artefact$Type<br />
+org.oleg.fcs.project.model.Component<br />
+org.oleg.fcs.project.model.Dependency<br />
+org.oleg.fcs.project.model.Project<br />
+org.oleg.fcs.project.model.Theme<br />
+org.oleg.fcs.project.model.Theme$Type<br />
+</td>
+<td>org.oleg.fcs.compiler<br />
+org.oleg.fcs.project.dao<br />
+org.oleg.fcs.project.dao.impl<br />
+</td>
+<td>java.lang<br />
+java.util<br />
+</td>
+</tr>
+</table>
+<a name="org.oleg.fcs.runner"></a><h3>org.oleg.fcs.runner</h3>
+<table class="bodyTable"><tr class="b"><th>Afferent Couplings</th>
+<th>Efferent Couplings</th>
+<th>Abstractness</th>
+<th>Instability</th>
+<th>Distance</th>
+</tr>
+<tr class="a"><td>0</td>
+<td>12</td>
+<td>0.0%</td>
+<td>100.0%</td>
+<td>0.0%</td>
+</tr>
+</table>
+<table class="bodyTable"><tr class="b"><th>Abstract Classes</th>
+<th>Concrete Classes</th>
+<th>Used by Packages</th>
+<th>Uses Packages</th>
+</tr>
+<tr class="a"><td><i>None</i></td>
+<td>org.oleg.fcs.runner.CompilationServer<br />
+</td>
+<td><i>None</i></td>
+<td>java.io<br />
+java.lang<br />
+java.util<br />
+javax.swing<br />
+org.apache.commons.logging<br />
+org.oleg.fcs.compiler<br />
+org.oleg.fcs.compiler.listener<br />
+org.oleg.fcs.event<br />
+org.oleg.fcs.helper<br />
+org.oleg.fcs.project.dao.impl<br />
+org.oleg.fcs.server<br />
+org.oleg.fcs.util<br />
+</td>
+</tr>
+</table>
+<a name="org.oleg.fcs.server"></a><h3>org.oleg.fcs.server</h3>
+<table class="bodyTable"><tr class="b"><th>Afferent Couplings</th>
+<th>Efferent Couplings</th>
+<th>Abstractness</th>
+<th>Instability</th>
+<th>Distance</th>
+</tr>
+<tr class="a"><td>1</td>
+<td>7</td>
+<td>33.0%</td>
+<td>88.0%</td>
+<td>21.0%</td>
+</tr>
+</table>
+<table class="bodyTable"><tr class="b"><th>Abstract Classes</th>
+<th>Concrete Classes</th>
+<th>Used by Packages</th>
+<th>Uses Packages</th>
+</tr>
+<tr class="a"><td>org.oleg.fcs.server.ConfigProperties<br />
+</td>
+<td>org.oleg.fcs.server.CompillerServer<br />
+org.oleg.fcs.server.CompillerServer$Comunicator<br />
+</td>
+<td>org.oleg.fcs.runner<br />
+</td>
+<td>java.io<br />
+java.lang<br />
+java.net<br />
+java.util<br />
+org.apache.commons.logging<br />
+org.oleg.fcs.api<br />
+org.oleg.fcs.helper<br />
+</td>
+</tr>
+</table>
+<a name="org.oleg.fcs.ui"></a><h3>org.oleg.fcs.ui</h3>
+<table class="bodyTable"><tr class="b"><th>Afferent Couplings</th>
+<th>Efferent Couplings</th>
+<th>Abstractness</th>
+<th>Instability</th>
+<th>Distance</th>
+</tr>
+<tr class="a"><td>1</td>
+<td>8</td>
+<td>0.0%</td>
+<td>89.0%</td>
+<td>11.0%</td>
+</tr>
+</table>
+<table class="bodyTable"><tr class="b"><th>Abstract Classes</th>
+<th>Concrete Classes</th>
+<th>Used by Packages</th>
+<th>Uses Packages</th>
+</tr>
+<tr class="a"><td><i>None</i></td>
+<td>org.oleg.fcs.ui.FileViewer<br />
+org.oleg.fcs.ui.FileViewer$1<br />
+org.oleg.fcs.ui.FileViewer$2<br />
+org.oleg.fcs.ui.FileViewer$3<br />
+org.oleg.fcs.ui.FileViewer$4<br />
+org.oleg.fcs.ui.FileViewer$5<br />
+org.oleg.fcs.ui.FileViewer$6<br />
+org.oleg.fcs.ui.FileViewer$7<br />
+</td>
+<td>org.oleg.fcs.compiler.listener<br />
+</td>
+<td>java.awt<br />
+java.awt.event<br />
+java.io<br />
+java.lang<br />
+java.util<br />
+javax.swing<br />
+org.oleg.fcs.api<br />
+org.oleg.fcs.helper<br />
+</td>
+</tr>
+</table>
+<a name="org.oleg.fcs.util"></a><h3>org.oleg.fcs.util</h3>
+<table class="bodyTable"><tr class="b"><th>Afferent Couplings</th>
+<th>Efferent Couplings</th>
+<th>Abstractness</th>
+<th>Instability</th>
+<th>Distance</th>
+</tr>
+<tr class="a"><td>2</td>
+<td>4</td>
+<td>0.0%</td>
+<td>67.0%</td>
+<td>33.0%</td>
+</tr>
+</table>
+<table class="bodyTable"><tr class="b"><th>Abstract Classes</th>
+<th>Concrete Classes</th>
+<th>Used by Packages</th>
+<th>Uses Packages</th>
+</tr>
+<tr class="a"><td><i>None</i></td>
+<td>org.oleg.fcs.util.FlexUtil<br />
+</td>
+<td>org.oleg.fcs.compiler<br />
+org.oleg.fcs.runner<br />
+</td>
+<td>java.lang<br />
+java.util<br />
+org.oleg.fcs<br />
+org.oleg.fcs.helper<br />
+</td>
+</tr>
+</table>
+<a name="cycles"></a><h2>Cycles</h2>
+[ <a href="#summary">summary</a> ] [ <a href="#packages">packages</a> ] [ <a href="#cycles">cycles</a> ] [ <a href="#explanations">explanations</a> ] <br />
+<br />
+There are no cyclic dependencies.<br />
+<a name="explanations"></a><h2>Explanation</h2>
+[ <a href="#summary">summary</a> ] [ <a href="#packages">packages</a> ] [ <a href="#cycles">cycles</a> ] [ <a href="#explanations">explanations</a> ] <br />
+<br />
+The following explanations are for quick reference and are lifted directly from the original JDepend documentation.<br />
+<br />
+<table class="bodyTable"><tr class="b"><th>Term</th>
+<th>Description</th>
+</tr>
+<tr class="a"><td>Number of Classes</td>
+<td>The number of concrete and abstract classes (and interfaces) in the package is an indicator of the extensibility of the package.</td>
+</tr>
+<tr class="b"><td>Afferent Couplings</td>
+<td>The number of other packages that depend upon classes within the package is an indicator of the package's responsibility.</td>
+</tr>
+<tr class="a"><td>Efferent Couplings</td>
+<td>The number of other packages that the classes in the package depend upon is an indicator of the package's independence.</td>
+</tr>
+<tr class="b"><td>Abstractness</td>
+<td>The ratio of the number of abstract classes (and interfaces) in the analyzed package to the total number of classes in the analyzed package. The range for this metric is 0 to 1, with A=0 indicating a completely concrete package and A=1 indicating a completely abstract package.</td>
+</tr>
+<tr class="a"><td>Instability</td>
+<td>The ratio of efferent coupling (Ce) to total coupling (Ce / (Ce + Ca)). This metric is an indicator of the package's resilience to change. The range for this metric is 0 to 1, with I=0 indicating a completely stable package and I=1 indicating a completely instable package.</td>
+</tr>
+<tr class="b"><td>Distance</td>
+<td>The perpendicular distance of a package from the idealized line A + I = 1. This metric is an indicator of the package's balance between abstractness and stability. A package squarely on the main sequence is optimally balanced with respect to its abstractness and stability. Ideal packages are either completely abstract and stable (x=0, y=1) or completely concrete and instable (x=1, y=0). The range for this metric is 0 to 1, with D=0 indicating a package that is coincident with the main sequence and D=1 indicating a package that is as far from the main sequence as possible.</td>
+</tr>
+<tr class="a"><td>Cycles</td>
+<td>Packages participating in a package dependency cycle are  in a deadly embrace with respect to reusability and their  release cycle. Package dependency cycles can be easily identified by reviewing the textual reports of dependency cycles. Once these dependency cycles have been identified with JDepend, they can be broken by employing various object-oriented techniques.</td>
+</tr>
+</table>
+</div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2009
+    
+          
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>

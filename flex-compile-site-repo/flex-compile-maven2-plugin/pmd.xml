@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="4.2.2" timestamp="2009-05-21T20:55:06.110">
+<file name="D:\Temp\10things\target\checkout\flex-compile-maven2-plugin\src\main\java\org\oleg\maven2\plugin\flex\FlexCompileMojo.java">
+<violation beginline="7" endline="7" begincolumn="1" endcolumn="39" rule="UnusedImports" ruleset="Import Statement Rules" package="org.oleg.maven2.plugin.flex" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.apache.maven.model.Resource'
+</violation>
+<violation beginline="8" endline="8" begincolumn="1" endcolumn="42" rule="UnusedImports" ruleset="Import Statement Rules" package="org.oleg.maven2.plugin.flex" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.apache.maven.model.Contributor'
+</violation>
+<violation beginline="16" endline="16" begincolumn="1" endcolumn="27" rule="UnusedImports" ruleset="Import Statement Rules" package="org.oleg.maven2.plugin.flex" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.util.ArrayList'
+</violation>
+<violation beginline="18" endline="18" begincolumn="1" endcolumn="29" rule="UnusedImports" ruleset="Import Statement Rules" package="org.oleg.maven2.plugin.flex" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.util.Enumeration'
+</violation>
+</file>
+</pmd>

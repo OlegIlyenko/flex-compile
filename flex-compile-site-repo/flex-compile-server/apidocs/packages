@@ -1,0 +1,10 @@
+org.oleg.fcs.compiler
+org.oleg.fcs.compiler.listener
+org.oleg.fcs.event
+org.oleg.fcs.project.dao.impl
+org.oleg.fcs.project.dao
+org.oleg.fcs.project.model
+org.oleg.fcs.runner
+org.oleg.fcs.server
+org.oleg.fcs.ui
+org.oleg.fcs.util
