@@ -1,0 +1,1431 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Flex Compile Project Distribution - Project Dependencies</title>
+    <style type="text/css" media="all">
+      @import url("./css/maven-base.css");
+      @import url("./css/maven-theme.css");
+      @import url("./css/site.css");
+    </style>
+    <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <div id="banner">
+                    <span id="bannerLeft">
+    
+            Flex Compile Project Distribution
+    
+            </span>
+                    <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+    
+            <div class="xleft">
+        Last Published: 2009-05-21
+                      </div>
+            <div class="xright">            <a href="">Flex Compile Project Distribution</a>
+            
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+    
+                             <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+            
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+            <li class="expanded">
+                    <a href="project-info.html">Project Information</a>
+                  <ul>
+                  
+    <li class="none">
+                    <a href="index.html">About</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="integration.html">Continuous Integration</a>
+          </li>
+                  
+    <li class="none">
+              <strong>Dependencies</strong>
+        </li>
+                  
+    <li class="none">
+                    <a href="dependency-convergence.html">Dependency Convergence</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="dependency-management.html">Dependency Management</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="issue-tracking.html">Issue Tracking</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="mail-lists.html">Mailing Lists</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="plugin-management.html">Plugin Management</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="license.html">Project License</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="plugins.html">Project Plugins</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="project-summary.html">Project Summary</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="team-list.html">Project Team</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="source-repository.html">Source Repository</a>
+          </li>
+              </ul>
+        </li>
+              
+                
+              
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="project-reports.html">Project Reports</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="./images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2>Project Dependencies</h2>
+<div class="section"><h3>compile</h3>
+<p>The following is a list of compile dependencies for this project. These dependencies are required to compile and run the application:</p>
+<table class="bodyTable"><tr class="a"><th>GroupId</th>
+<th>ArtifactId</th>
+<th>Version</th>
+<th>Type</th>
+</tr>
+<tr class="b"><td>commons-logging</td>
+<td>commons-logging</td>
+<td>1.1</td>
+<td>jar</td>
+</tr>
+<tr class="a"><td>org.oleg</td>
+<td><a href="http://code.google.com/p/flex-compile/flex-compile-client" class="externalLink">flex-compile-client</a></td>
+<td>1.0-beta</td>
+<td>jar</td>
+</tr>
+<tr class="b"><td>org.oleg</td>
+<td><a href="http://code.google.com/p/flex-compile/flex-compile-maven2-plugin" class="externalLink">flex-compile-maven2-plugin</a></td>
+<td>1.0-beta</td>
+<td>maven-plugin</td>
+</tr>
+<tr class="a"><td>org.oleg</td>
+<td><a href="http://code.google.com/p/flex-compile/flex-compile-server" class="externalLink">flex-compile-server</a></td>
+<td>1.0-beta</td>
+<td>jar</td>
+</tr>
+</table>
+</div>
+<div class="section"><h3>test</h3>
+<p>The following is a list of test dependencies for this project. These dependencies are only required to compile and run unit tests for the application:</p>
+<table class="bodyTable"><tr class="b"><th>GroupId</th>
+<th>ArtifactId</th>
+<th>Version</th>
+<th>Type</th>
+</tr>
+<tr class="a"><td>junit</td>
+<td><a href="http://junit.org" class="externalLink">junit</a></td>
+<td>4.4</td>
+<td>jar</td>
+</tr>
+</table>
+</div>
+<div class="section"><h3>provided</h3>
+<p>The following is a list of provided dependencies for this project. These dependencies are required to compile the application, but should be provided by default when using the library:</p>
+<table class="bodyTable"><tr class="b"><th>GroupId</th>
+<th>ArtifactId</th>
+<th>Version</th>
+<th>Type</th>
+</tr>
+<tr class="a"><td>com.adobe.flex</td>
+<td>flex-compiler-oem</td>
+<td>3.0.1.1728</td>
+<td>jar</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="section"><h2>Project Transitive Dependencies</h2>
+<p>The following is a list of transitive dependencies for this project. Transitive dependencies are the dependencies of the project dependencies.</p>
+<div class="section"><h3>compile</h3>
+<p>The following is a list of compile dependencies for this project. These dependencies are required to compile and run the application:</p>
+<table class="bodyTable"><tr class="b"><th>GroupId</th>
+<th>ArtifactId</th>
+<th>Version</th>
+<th>Type</th>
+</tr>
+<tr class="a"><td>javax.xml.stream</td>
+<td>stax-api</td>
+<td>1.0-2</td>
+<td>jar</td>
+</tr>
+<tr class="b"><td>log4j</td>
+<td><a href="http://logging.apache.org/log4j/docs/" class="externalLink">log4j</a></td>
+<td>1.2.14</td>
+<td>jar</td>
+</tr>
+<tr class="a"><td>org.codehaus.woodstox</td>
+<td><a href="http://woodstox.codehaus.org/StAX2" class="externalLink">stax2-api</a></td>
+<td>3.0.1</td>
+<td>jar</td>
+</tr>
+<tr class="b"><td>org.codehaus.woodstox</td>
+<td><a href="http://woodstox.codehaus.org" class="externalLink">wstx-asl</a></td>
+<td>4.0.0</td>
+<td>jar</td>
+</tr>
+<tr class="a"><td>org.oleg</td>
+<td><a href="http://code.google.com/p/flex-compile/flex-compile-common" class="externalLink">flex-compile-common</a></td>
+<td>1.0-beta</td>
+<td>jar</td>
+</tr>
+<tr class="b"><td>stax</td>
+<td><a href="http://stax.codehaus.org/" class="externalLink">stax-api</a></td>
+<td>1.0.1</td>
+<td>jar</td>
+</tr>
+</table>
+</div>
+<div class="section"><h3>provided</h3>
+<p>The following is a list of provided dependencies for this project. These dependencies are required to compile the application, but should be provided by default when using the library:</p>
+<table class="bodyTable"><tr class="a"><th>GroupId</th>
+<th>ArtifactId</th>
+<th>Version</th>
+<th>Type</th>
+</tr>
+<tr class="b"><td>com.adobe.batik</td>
+<td>batik-bridge</td>
+<td>3.0.0.3.0.0.477</td>
+<td>jar</td>
+</tr>
+<tr class="a"><td>com.adobe.batik</td>
+<td>batik-css</td>
+<td>3.0.0.3.0.0.477</td>
+<td>jar</td>
+</tr>
+<tr class="b"><td>com.adobe.batik</td>
+<td>batik-dom</td>
+<td>3.0.0.3.0.0.477</td>
+<td>jar</td>
+</tr>
+<tr class="a"><td>com.adobe.batik</td>
+<td>batik-ext</td>
+<td>3.0.0.3.0.0.477</td>
+<td>jar</td>
+</tr>
+<tr class="b"><td>com.adobe.batik</td>
+<td>batik-gvt</td>
+<td>3.0.0.3.0.0.477</td>
+<td>jar</td>
+</tr>
+<tr class="a"><td>com.adobe.batik</td>
+<td>batik-parser</td>
+<td>3.0.0.3.0.0.477</td>
+<td>jar</td>
+</tr>
+<tr class="b"><td>com.adobe.batik</td>
+<td>batik-script</td>
+<td>3.0.0.3.0.0.477</td>
+<td>jar</td>
+</tr>
+<tr class="a"><td>com.adobe.batik</td>
+<td>batik-svg-dom</td>
+<td>3.0.0.3.0.0.477</td>
+<td>jar</td>
+</tr>
+<tr class="b"><td>com.adobe.batik</td>
+<td>batik-svggen</td>
+<td>3.0.0.3.0.0.477</td>
+<td>jar</td>
+</tr>
+<tr class="a"><td>com.adobe.batik</td>
+<td>batik-transcoder</td>
+<td>3.0.0.3.0.0.477</td>
+<td>jar</td>
+</tr>
+<tr class="b"><td>com.adobe.batik</td>
+<td>batik-util</td>
+<td>3.0.0.3.0.0.477</td>
+<td>jar</td>
+</tr>
+<tr class="a"><td>com.adobe.batik</td>
+<td>batik-xml</td>
+<td>3.0.0.3.0.0.477</td>
+<td>jar</td>
+</tr>
+<tr class="b"><td>com.adobe.commons-collections</td>
+<td>commons-collections</td>
+<td>2.1</td>
+<td>jar</td>
+</tr>
+<tr class="a"><td>com.adobe.flex</td>
+<td>compc</td>
+<td>3.0.1.1728</td>
+<td>jar</td>
+</tr>
+<tr class="b"><td>com.adobe.flex</td>
+<td>messaging-common</td>
+<td>3.0.1.1414</td>
+<td>jar</td>
+</tr>
+<tr class="a"><td>com.adobe.flex</td>
+<td>mxmlc</td>
+<td>3.0.1.1728</td>
+<td>jar</td>
+</tr>
+<tr class="b"><td>com.adobe.flex</td>
+<td>swfutil</td>
+<td>3.0.1.1728</td>
+<td>jar</td>
+</tr>
+<tr class="a"><td>com.adobe.velocity</td>
+<td>mm-velocity</td>
+<td>1.4</td>
+<td>jar</td>
+</tr>
+<tr class="b"><td>com.adobe.xerces</td>
+<td>xerces</td>
+<td>2.4.0</td>
+<td>jar</td>
+</tr>
+<tr class="a"><td>com.adobe.xerces</td>
+<td>xercesPatch</td>
+<td>3.0.0.3.0.0.477</td>
+<td>jar</td>
+</tr>
+<tr class="b"><td>macromedia</td>
+<td>asc</td>
+<td>3.0.1.1728</td>
+<td>jar</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="section"><h2>Project Dependency Graph</h2>
+<script language="javascript" type="text/javascript">
+      function toggleDependencyDetail( divId, imgId )
+      {
+        var div = document.getElementById( divId );
+        var img = document.getElementById( imgId );
+        if( div.style.display == '' )
+        {
+          div.style.display = 'none';
+          img.src='./images/icon_info_sml.gif';
+        }
+        else
+        {
+          div.style.display = '';
+          img.src='./images/close.gif';
+        }
+      }
+</script>
+<div class="section"><h3>Dependency Tree</h3>
+<ul><li>org.oleg:flex-compile-distribution:pom:1.0-beta <img id="_943841223" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1123274594', '_943841223' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1123274594" style="display:none"><table class="bodyTable"><tr class="a"><th>Flex Compile Project Distribution</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>There is currently no description associated with this project.</p>
+<p><b>URL: </b><a href="http://code.google.com/p/flex-compile/flex-compile-distribution" class="externalLink">http://code.google.com/p/flex-compile/flex-compile-distribution</a></p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div><ul><li>org.oleg:flex-compile-client:jar:1.0-beta (compile) <img id="_78436934" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_18552098', '_78436934' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_18552098" style="display:none"><table class="bodyTable"><tr class="a"><th>Flex Compile Client</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>There is currently no description associated with this project.</p>
+<p><b>URL: </b><a href="http://code.google.com/p/flex-compile/flex-compile-client" class="externalLink">http://code.google.com/p/flex-compile/flex-compile-client</a></p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div><ul><li>org.oleg:flex-compile-common:jar:1.0-beta (compile) <img id="_950675932" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1995447461', '_950675932' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1995447461" style="display:none"><table class="bodyTable"><tr class="a"><th>Flex Compile Commons</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>There is currently no description associated with this project.</p>
+<p><b>URL: </b><a href="http://code.google.com/p/flex-compile/flex-compile-common" class="externalLink">http://code.google.com/p/flex-compile/flex-compile-common</a></p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div><ul><li>commons-logging:commons-logging:jar:1.1 (compile) <img id="_1756476137" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_474315710', '_1756476137' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_474315710" style="display:none"><table class="bodyTable"><tr class="a"><th>Logging</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>Commons Logging is a thin adapter allowing configurable bridging to other,
+    well known logging systems.</p>
+<p><b>URL: </b>http://jakarta.apache.org/commons/${pom.artifactId.substring(8)}/</p>
+<p><b>Project License: </b><a href="/LICENSE.txt">The Apache Software License, Version 2.0</a></p>
+</td>
+</tr>
+</table>
+</div></li>
+</ul>
+</li>
+<li>org.oleg:flex-compile-server:jar:1.0-beta (compile) <img id="_715029303" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1765441688', '_715029303' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1765441688" style="display:none"><table class="bodyTable"><tr class="a"><th>Flex Compile Server</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>There is currently no description associated with this project.</p>
+<p><b>URL: </b><a href="http://code.google.com/p/flex-compile/flex-compile-server" class="externalLink">http://code.google.com/p/flex-compile/flex-compile-server</a></p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>commons-logging:commons-logging:jar:1.1 (compile) <img id="_1885095078" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_567488287', '_1885095078' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_567488287" style="display:none"><table class="bodyTable"><tr class="a"><th>Logging</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>Commons Logging is a thin adapter allowing configurable bridging to other,
+    well known logging systems.</p>
+<p><b>URL: </b>http://jakarta.apache.org/commons/${pom.artifactId.substring(8)}/</p>
+<p><b>Project License: </b><a href="/LICENSE.txt">The Apache Software License, Version 2.0</a></p>
+</td>
+</tr>
+</table>
+</div></li>
+</ul>
+</li>
+<li>org.oleg:flex-compile-server:jar:1.0-beta (compile) <img id="_1271200037" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_903284204', '_1271200037' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_903284204" style="display:none"><table class="bodyTable"><tr class="a"><th>Flex Compile Server</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>There is currently no description associated with this project.</p>
+<p><b>URL: </b><a href="http://code.google.com/p/flex-compile/flex-compile-server" class="externalLink">http://code.google.com/p/flex-compile/flex-compile-server</a></p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div><ul><li>org.oleg:flex-compile-common:jar:1.0-beta (compile) <img id="_1924929850" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_2119753308', '_1924929850' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_2119753308" style="display:none"><table class="bodyTable"><tr class="a"><th>Flex Compile Commons</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>There is currently no description associated with this project.</p>
+<p><b>URL: </b><a href="http://code.google.com/p/flex-compile/flex-compile-common" class="externalLink">http://code.google.com/p/flex-compile/flex-compile-common</a></p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>javax.xml.stream:stax-api:jar:1.0-2 (compile) <img id="_714965819" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1030305786', '_714965819' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1030305786" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - javax.xml.stream:stax-api:jar:1.0-2</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>There is currently no description associated with this project.</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>org.codehaus.woodstox:wstx-asl:jar:4.0.0 (compile) <img id="_915201740" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_2055303221', '_915201740' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_2055303221" style="display:none"><table class="bodyTable"><tr class="a"><th>Woodstox</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>Woodstox is a high-performance XML processor that
+implements Stax (JSR-173) and SAX2 APIs</p>
+<p><b>URL: </b><a href="http://woodstox.codehaus.org" class="externalLink">http://woodstox.codehaus.org</a></p>
+<p><b>Project License: </b><a href="http://www.apache.org/licenses/LICENSE-2.0.txt" class="externalLink">The Apache Software License, Version 2.0</a></p>
+</td>
+</tr>
+</table>
+</div><ul><li>stax:stax-api:jar:1.0.1 (compile) <img id="_111018002" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_2124525867', '_111018002' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_2124525867" style="display:none"><table class="bodyTable"><tr class="a"><th>StAX API</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>StAX API is the standard java XML processing API defined by JSR-173</p>
+<p><b>URL: </b><a href="http://stax.codehaus.org/" class="externalLink">http://stax.codehaus.org/</a></p>
+<p><b>Project License: </b><a href="http://www.apache.org/licenses/LICENSE-2.0.txt" class="externalLink">The Apache Software License, Version 2.0</a></p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>org.codehaus.woodstox:stax2-api:jar:3.0.1 (compile) <img id="_2016160513" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1139039933', '_2016160513' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1139039933" style="display:none"><table class="bodyTable"><tr class="a"><th>Stax2 API</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>Stax2 API is an extension to basic Stax 1.0 API that adds significant new functionality, such as full-featured bi-direction validation interface and high-performance Typed Access API.</p>
+<p><b>URL: </b><a href="http://woodstox.codehaus.org/StAX2" class="externalLink">http://woodstox.codehaus.org/StAX2</a></p>
+<p><b>Project License: </b><a href="http://www.opensource.org/licenses/bsd-license.php" class="externalLink">The BSD License</a></p>
+</td>
+</tr>
+</table>
+</div><ul><li>stax:stax-api:jar:1.0.1 (compile) <img id="_1052043945" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_786544412', '_1052043945' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_786544412" style="display:none"><table class="bodyTable"><tr class="a"><th>StAX API</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>StAX API is the standard java XML processing API defined by JSR-173</p>
+<p><b>URL: </b><a href="http://stax.codehaus.org/" class="externalLink">http://stax.codehaus.org/</a></p>
+<p><b>Project License: </b><a href="http://www.apache.org/licenses/LICENSE-2.0.txt" class="externalLink">The Apache Software License, Version 2.0</a></p>
+</td>
+</tr>
+</table>
+</div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>commons-logging:commons-logging:jar:1.1 (compile) <img id="_79745558" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_192219799', '_79745558' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_192219799" style="display:none"><table class="bodyTable"><tr class="a"><th>Logging</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>Commons Logging is a thin adapter allowing configurable bridging to other,
+    well known logging systems.</p>
+<p><b>URL: </b>http://jakarta.apache.org/commons/${pom.artifactId.substring(8)}/</p>
+<p><b>Project License: </b><a href="/LICENSE.txt">The Apache Software License, Version 2.0</a></p>
+</td>
+</tr>
+</table>
+</div></li>
+</ul>
+</li>
+<li>org.oleg:flex-compile-maven2-plugin:maven-plugin:1.0-beta (compile) <img id="_1411474375" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_903514092', '_1411474375' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_903514092" style="display:none"><table class="bodyTable"><tr class="a"><th>Flex Compile - Maven2 plugin for web projects</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>There is currently no description associated with this project.</p>
+<p><b>URL: </b><a href="http://code.google.com/p/flex-compile/flex-compile-maven2-plugin" class="externalLink">http://code.google.com/p/flex-compile/flex-compile-maven2-plugin</a></p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div><ul><li>org.oleg:flex-compile-client:jar:1.0-beta (compile) <img id="_274213350" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1334301704', '_274213350' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1334301704" style="display:none"><table class="bodyTable"><tr class="a"><th>Flex Compile Client</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>There is currently no description associated with this project.</p>
+<p><b>URL: </b><a href="http://code.google.com/p/flex-compile/flex-compile-client" class="externalLink">http://code.google.com/p/flex-compile/flex-compile-client</a></p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>commons-logging:commons-logging:jar:1.1 (compile) <img id="_1189676950" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1699772348', '_1189676950' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1699772348" style="display:none"><table class="bodyTable"><tr class="a"><th>Logging</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>Commons Logging is a thin adapter allowing configurable bridging to other,
+    well known logging systems.</p>
+<p><b>URL: </b>http://jakarta.apache.org/commons/${pom.artifactId.substring(8)}/</p>
+<p><b>Project License: </b><a href="/LICENSE.txt">The Apache Software License, Version 2.0</a></p>
+</td>
+</tr>
+</table>
+</div></li>
+</ul>
+</li>
+<li>junit:junit:jar:4.4 (test) <img id="_1557554530" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1461592255', '_1557554530' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1461592255" style="display:none"><table class="bodyTable"><tr class="a"><th>JUnit</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>JUnit is a regression testing framework written by Erich Gamma and Kent Beck. It is used by the developer who implements unit tests in Java.</p>
+<p><b>URL: </b><a href="http://junit.org" class="externalLink">http://junit.org</a></p>
+<p><b>Project License: </b><a href="http://www.opensource.org/licenses/cpl1.0.txt" class="externalLink">Common Public License Version 1.0</a></p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>commons-logging:commons-logging:jar:1.1 (compile) <img id="_527673629" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_582121091', '_527673629' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_582121091" style="display:none"><table class="bodyTable"><tr class="a"><th>Logging</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>Commons Logging is a thin adapter allowing configurable bridging to other,
+    well known logging systems.</p>
+<p><b>URL: </b>http://jakarta.apache.org/commons/${pom.artifactId.substring(8)}/</p>
+<p><b>Project License: </b><a href="/LICENSE.txt">The Apache Software License, Version 2.0</a></p>
+</td>
+</tr>
+</table>
+</div><ul><li>log4j:log4j:jar:1.2.14 (compile) <img id="_479684181" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_2065337251', '_479684181' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_2065337251" style="display:none"><table class="bodyTable"><tr class="a"><th>Log4j</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>Log4j</p>
+<p><b>URL: </b><a href="http://logging.apache.org/log4j/docs/" class="externalLink">http://logging.apache.org/log4j/docs/</a></p>
+<p><b>Project License: </b><a href="http://www.apache.org/licenses/LICENSE-2.0.txt" class="externalLink">The Apache Software License, Version 2.0</a></p>
+</td>
+</tr>
+</table>
+</div></li>
+</ul>
+</li>
+<li>com.adobe.flex:flex-compiler-oem:jar:3.0.1.1728 (provided) <img id="_486284159" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1740015223', '_486284159' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1740015223" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.flex:flex-compiler-oem:jar:3.0.1.1728</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div><ul><li>com.adobe.flex:compc:jar:3.0.1.1728 (provided) <img id="_586113324" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1236966306', '_586113324' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1236966306" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.flex:compc:jar:3.0.1.1728</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div><ul><li>com.adobe.flex:mxmlc:jar:3.0.1.1728 (provided) <img id="_1966052462" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_161232392', '_1966052462' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_161232392" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.flex:mxmlc:jar:3.0.1.1728</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div><ul><li>com.adobe.flex:messaging-common:jar:3.0.1.1414 (provided) <img id="_65125548" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_136202659', '_65125548' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_136202659" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.flex:messaging-common:jar:3.0.1.1414</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>macromedia:asc:jar:3.0.1.1728 (provided) <img id="_302142341" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_789474405', '_302142341' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_789474405" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - macromedia:asc:jar:3.0.1.1728</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>com.adobe.flex:swfutil:jar:3.0.1.1728 (provided) <img id="_328726446" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1173700056', '_328726446' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1173700056" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.flex:swfutil:jar:3.0.1.1728</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>com.adobe.batik:batik-bridge:jar:3.0.0.3.0.0.477 (provided) <img id="_887994774" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_42336719', '_887994774' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_42336719" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.batik:batik-bridge:jar:3.0.0.3.0.0.477</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>com.adobe.batik:batik-css:jar:3.0.0.3.0.0.477 (provided) <img id="_1750310730" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1297617652', '_1750310730' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1297617652" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.batik:batik-css:jar:3.0.0.3.0.0.477</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>com.adobe.batik:batik-dom:jar:3.0.0.3.0.0.477 (provided) <img id="_1407257733" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1427936162', '_1407257733' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1427936162" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.batik:batik-dom:jar:3.0.0.3.0.0.477</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>com.adobe.batik:batik-ext:jar:3.0.0.3.0.0.477 (provided) <img id="_2040928085" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_558383776', '_2040928085' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_558383776" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.batik:batik-ext:jar:3.0.0.3.0.0.477</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>com.adobe.batik:batik-gvt:jar:3.0.0.3.0.0.477 (provided) <img id="_1635483627" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1560899699', '_1635483627' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1560899699" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.batik:batik-gvt:jar:3.0.0.3.0.0.477</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>com.adobe.batik:batik-parser:jar:3.0.0.3.0.0.477 (provided) <img id="_1614526236" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_31604000', '_1614526236' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_31604000" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.batik:batik-parser:jar:3.0.0.3.0.0.477</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>com.adobe.batik:batik-script:jar:3.0.0.3.0.0.477 (provided) <img id="_1446630664" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_897166165', '_1446630664' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_897166165" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.batik:batik-script:jar:3.0.0.3.0.0.477</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>com.adobe.batik:batik-svg-dom:jar:3.0.0.3.0.0.477 (provided) <img id="_634093087" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_200657045', '_634093087' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_200657045" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.batik:batik-svg-dom:jar:3.0.0.3.0.0.477</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>com.adobe.batik:batik-svggen:jar:3.0.0.3.0.0.477 (provided) <img id="_1286347811" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1495415848', '_1286347811' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1495415848" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.batik:batik-svggen:jar:3.0.0.3.0.0.477</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>com.adobe.batik:batik-transcoder:jar:3.0.0.3.0.0.477 (provided) <img id="_1789170188" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1998471878', '_1789170188' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1998471878" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.batik:batik-transcoder:jar:3.0.0.3.0.0.477</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>com.adobe.batik:batik-util:jar:3.0.0.3.0.0.477 (provided) <img id="_1187230568" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1819166820', '_1187230568' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1819166820" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.batik:batik-util:jar:3.0.0.3.0.0.477</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>com.adobe.batik:batik-xml:jar:3.0.0.3.0.0.477 (provided) <img id="_797280278" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1274756053', '_797280278' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1274756053" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.batik:batik-xml:jar:3.0.0.3.0.0.477</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>com.adobe.xerces:xerces:jar:2.4.0 (provided) <img id="_1793245128" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_392306765', '_1793245128' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_392306765" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.xerces:xerces:jar:2.4.0</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>com.adobe.xerces:xercesPatch:jar:3.0.0.3.0.0.477 (provided) <img id="_1271156061" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1114177335', '_1271156061' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1114177335" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.xerces:xercesPatch:jar:3.0.0.3.0.0.477</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>com.adobe.velocity:mm-velocity:jar:1.4 (provided) <img id="_1885869575" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_1405479491', '_1885869575' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_1405479491" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.velocity:mm-velocity:jar:1.4</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+<li>com.adobe.commons-collections:commons-collections:jar:2.1 (provided) <img id="_1167926337" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_409404982', '_1167926337' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_409404982" style="display:none"><table class="bodyTable"><tr class="a"><th>Unnamed - com.adobe.commons-collections:commons-collections:jar:2.1</th>
+</tr>
+<tr class="b"><td><p><b>Description: </b>POM was created from install:install-file</p>
+<p><b>Project License: </b>No project license is defined for this project.</p>
+</td>
+</tr>
+</table>
+</div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section"><h2>Licenses</h2>
+<p><b>Unknown: </b>Flex Compile - Maven2 plugin for web projects, Flex Compile Client, Flex Compile Commons, Flex Compile Project Distribution, Flex Compile Server, Unnamed - com.adobe.batik:batik-bridge:jar:3.0.0.3.0.0.477, Unnamed - com.adobe.batik:batik-css:jar:3.0.0.3.0.0.477, Unnamed - com.adobe.batik:batik-dom:jar:3.0.0.3.0.0.477, Unnamed - com.adobe.batik:batik-ext:jar:3.0.0.3.0.0.477, Unnamed - com.adobe.batik:batik-gvt:jar:3.0.0.3.0.0.477, Unnamed - com.adobe.batik:batik-parser:jar:3.0.0.3.0.0.477, Unnamed - com.adobe.batik:batik-script:jar:3.0.0.3.0.0.477, Unnamed - com.adobe.batik:batik-svg-dom:jar:3.0.0.3.0.0.477, Unnamed - com.adobe.batik:batik-svggen:jar:3.0.0.3.0.0.477, Unnamed - com.adobe.batik:batik-transcoder:jar:3.0.0.3.0.0.477, Unnamed - com.adobe.batik:batik-util:jar:3.0.0.3.0.0.477, Unnamed - com.adobe.batik:batik-xml:jar:3.0.0.3.0.0.477, Unnamed - com.adobe.commons-collections:commons-collections:jar:2.1, Unnamed - com.adobe.flex:compc:jar:3.0.1.1728, Unnamed - com.adobe.flex:flex-compiler-oem:jar:3.0.1.1728, Unnamed - com.adobe.flex:messaging-common:jar:3.0.1.1414, Unnamed - com.adobe.flex:mxmlc:jar:3.0.1.1728, Unnamed - com.adobe.flex:swfutil:jar:3.0.1.1728, Unnamed - com.adobe.velocity:mm-velocity:jar:1.4, Unnamed - com.adobe.xerces:xerces:jar:2.4.0, Unnamed - com.adobe.xerces:xercesPatch:jar:3.0.0.3.0.0.477, Unnamed - javax.xml.stream:stax-api:jar:1.0-2, Unnamed - macromedia:asc:jar:3.0.1.1728</p>
+<p><b>Common Public License Version 1.0: </b>JUnit</p>
+<p><b>The Apache Software License, Version 2.0: </b>Log4j, Logging, StAX API, Woodstox</p>
+<p><b>The BSD License: </b>Stax2 API</p>
+</div>
+<div class="section"><h2>Dependency File Details</h2>
+<table class="bodyTable"><tbody><tr class="a"><th align="left">Filename</th>
+<th align="right">Size</th>
+<th align="right">Entries</th>
+<th align="right">Classes</th>
+<th align="right">Packages</th>
+<th align="center">JDK Rev</th>
+<th align="center">Debug</th>
+</tr>
+<tr class="b"><td align="left">batik-bridge-3.0.0.3.0.0.477.jar</td>
+<td align="right">354.50 kB</td>
+<td align="right">219</td>
+<td align="right">209</td>
+<td align="right">2</td>
+<td align="center">1.4</td>
+<td align="center">debug</td>
+</tr>
+<tr class="a"><td align="left">batik-css-3.0.0.3.0.0.477.jar</td>
+<td align="right">228.48 kB</td>
+<td align="right">249</td>
+<td align="right">229</td>
+<td align="right">8</td>
+<td align="center">1.2</td>
+<td align="center">release</td>
+</tr>
+<tr class="b"><td align="left">batik-dom-3.0.0.3.0.0.477.jar</td>
+<td align="right">85.36 kB</td>
+<td align="right">98</td>
+<td align="right">87</td>
+<td align="right">4</td>
+<td align="center">1.1</td>
+<td align="center">release</td>
+</tr>
+<tr class="a"><td align="left">batik-ext-3.0.0.3.0.0.477.jar</td>
+<td align="right">77.37 kB</td>
+<td align="right">201</td>
+<td align="right">191</td>
+<td align="right">4</td>
+<td align="center">1.4</td>
+<td align="center">debug</td>
+</tr>
+<tr class="b"><td align="left">batik-gvt-3.0.0.3.0.0.477.jar</td>
+<td align="right">225.40 kB</td>
+<td align="right">135</td>
+<td align="right">122</td>
+<td align="right">8</td>
+<td align="center">1.4</td>
+<td align="center">debug</td>
+</tr>
+<tr class="a"><td align="left">batik-parser-3.0.0.3.0.0.477.jar</td>
+<td align="right">50.27 kB</td>
+<td align="right">54</td>
+<td align="right">43</td>
+<td align="right">1</td>
+<td align="center">1.4</td>
+<td align="center">debug</td>
+</tr>
+<tr class="b"><td align="left">batik-script-3.0.0.3.0.0.477.jar</td>
+<td align="right">42.45 kB</td>
+<td align="right">48</td>
+<td align="right">37</td>
+<td align="right">2</td>
+<td align="center">1.4</td>
+<td align="center">debug</td>
+</tr>
+<tr class="a"><td align="left">batik-svg-dom-3.0.0.3.0.0.477.jar</td>
+<td align="right">470.52 kB</td>
+<td align="right">405</td>
+<td align="right">339</td>
+<td align="right">2</td>
+<td align="center">1.4</td>
+<td align="center">debug</td>
+</tr>
+<tr class="b"><td align="left">batik-svggen-3.0.0.3.0.0.477.jar</td>
+<td align="right">199.48 kB</td>
+<td align="right">166</td>
+<td align="right">156</td>
+<td align="right">3</td>
+<td align="center">1.4</td>
+<td align="center">debug</td>
+</tr>
+<tr class="a"><td align="left">batik-transcoder-3.0.0.3.0.0.477.jar</td>
+<td align="right">82.69 kB</td>
+<td align="right">62</td>
+<td align="right">48</td>
+<td align="right">8</td>
+<td align="center">1.4</td>
+<td align="center">debug</td>
+</tr>
+<tr class="b"><td align="left">batik-util-3.0.0.3.0.0.477.jar</td>
+<td align="right">96.23 kB</td>
+<td align="right">82</td>
+<td align="right">69</td>
+<td align="right">5</td>
+<td align="center">1.4</td>
+<td align="center">debug</td>
+</tr>
+<tr class="a"><td align="left">batik-xml-3.0.0.3.0.0.477.jar</td>
+<td align="right">24.62 kB</td>
+<td align="right">15</td>
+<td align="right">6</td>
+<td align="right">1</td>
+<td align="center">1.4</td>
+<td align="center">debug</td>
+</tr>
+<tr class="b"><td align="left">commons-collections-2.1.jar</td>
+<td align="right">291.15 kB</td>
+<td align="right">248</td>
+<td align="right">237</td>
+<td align="right">5</td>
+<td align="center">1.2</td>
+<td align="center">debug</td>
+</tr>
+<tr class="a"><td align="left">compc-3.0.1.1728.jar</td>
+<td align="right">.65 kB</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="center">-</td>
+<td align="center">release</td>
+</tr>
+<tr class="b"><td align="left">flex-compiler-oem-3.0.1.1728.jar</td>
+<td align="right">115.12 kB</td>
+<td align="right">66</td>
+<td align="right">56</td>
+<td align="right">3</td>
+<td align="center">1.4</td>
+<td align="center">debug</td>
+</tr>
+<tr class="a"><td align="left">messaging-common-3.0.1.1414.jar</td>
+<td align="right">87.29 kB</td>
+<td align="right">57</td>
+<td align="right">47</td>
+<td align="right">5</td>
+<td align="center">1.5</td>
+<td align="center">debug</td>
+</tr>
+<tr class="b"><td align="left">mxmlc-3.0.1.1728.jar</td>
+<td align="right">1.47 MB</td>
+<td align="right">1,130</td>
+<td align="right">1,063</td>
+<td align="right">34</td>
+<td align="center">1.4</td>
+<td align="center">debug</td>
+</tr>
+<tr class="a"><td align="left">swfutil-3.0.1.1728.jar</td>
+<td align="right">435.85 kB</td>
+<td align="right">272</td>
+<td align="right">254</td>
+<td align="right">13</td>
+<td align="center">1.4</td>
+<td align="center">debug</td>
+</tr>
+<tr class="b"><td align="left">mm-velocity-1.4.jar</td>
+<td align="right">412.21 kB</td>
+<td align="right">343</td>
+<td align="right">295</td>
+<td align="right">38</td>
+<td align="center">1.4</td>
+<td align="center">debug</td>
+</tr>
+<tr class="a"><td align="left">xerces-2.4.0.jar</td>
+<td align="right">874.82 kB</td>
+<td align="right">760</td>
+<td align="right">700</td>
+<td align="right">38</td>
+<td align="center">1.1</td>
+<td align="center">release</td>
+</tr>
+<tr class="b"><td align="left">xercesPatch-3.0.0.3.0.0.477.jar</td>
+<td align="right">45.42 kB</td>
+<td align="right">34</td>
+<td align="right">21</td>
+<td align="right">4</td>
+<td align="center">1.1</td>
+<td align="center">debug</td>
+</tr>
+<tr class="a"><td align="left">commons-logging-1.1.jar</td>
+<td align="right">51.67 kB</td>
+<td align="right">34</td>
+<td align="right">25</td>
+<td align="right">2</td>
+<td align="center">1.1</td>
+<td align="center">debug</td>
+</tr>
+<tr class="b"><td align="left">stax-api-1.0-2.jar</td>
+<td align="right">22.80 kB</td>
+<td align="right">44</td>
+<td align="right">37</td>
+<td align="right">3</td>
+<td align="center">1.5</td>
+<td align="center">debug</td>
+</tr>
+<tr class="a"><td align="left">junit-4.4.jar</td>
+<td align="right">157.69 kB</td>
+<td align="right">188</td>
+<td align="right">154</td>
+<td align="right">20</td>
+<td align="center">1.5</td>
+<td align="center">debug</td>
+</tr>
+<tr class="b"><td align="left">log4j-1.2.14.jar</td>
+<td align="right">358.83 kB</td>
+<td align="right">288</td>
+<td align="right">256</td>
+<td align="right">19</td>
+<td align="center">1.1</td>
+<td align="center">debug</td>
+</tr>
+<tr class="a"><td align="left">asc-3.0.1.1728.jar</td>
+<td align="right">1.11 MB</td>
+<td align="right">326</td>
+<td align="right">313</td>
+<td align="right">8</td>
+<td align="center">1.5</td>
+<td align="center">debug</td>
+</tr>
+<tr class="b"><td align="left">stax2-api-3.0.1.jar</td>
+<td align="right">175.76 kB</td>
+<td align="right">137</td>
+<td align="right">123</td>
+<td align="right">11</td>
+<td align="center">1.4</td>
+<td align="center">debug</td>
+</tr>
+<tr class="a"><td align="left">wstx-asl-4.0.0.jar</td>
+<td align="right">469.98 kB</td>
+<td align="right">234</td>
+<td align="right">202</td>
+<td align="right">16</td>
+<td align="center">1.4</td>
+<td align="center">debug</td>
+</tr>
+<tr class="b"><td align="left">flex-compile-client-1.0-beta.jar</td>
+<td align="right">14.55 kB</td>
+<td align="right">19</td>
+<td align="right">6</td>
+<td align="right">2</td>
+<td align="center">1.6</td>
+<td align="center">debug</td>
+</tr>
+<tr class="a"><td align="left">flex-compile-common-1.0-beta.jar</td>
+<td align="right">13.56 kB</td>
+<td align="right">29</td>
+<td align="right">15</td>
+<td align="right">5</td>
+<td align="center">1.6</td>
+<td align="center">debug</td>
+</tr>
+<tr class="b"><td align="left">flex-compile-maven2-plugin-1.0-beta.jar</td>
+<td align="right">5.96 kB</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="a"><td align="left">flex-compile-server-1.0-beta.jar</td>
+<td align="right">63.78 kB</td>
+<td align="right">68</td>
+<td align="right">42</td>
+<td align="right">10</td>
+<td align="center">1.6</td>
+<td align="center">debug</td>
+</tr>
+<tr class="b"><td align="left">stax-api-1.0.1.jar</td>
+<td align="right">25.89 kB</td>
+<td align="right">48</td>
+<td align="right">40</td>
+<td align="right">5</td>
+<td align="center">1.2</td>
+<td align="center">debug</td>
+</tr>
+<tr class="a"><th align="left">Total</th>
+<th align="right">Size</th>
+<th align="right">Entries</th>
+<th align="right">Classes</th>
+<th align="right">Packages</th>
+<th align="center">JDK Rev</th>
+<th align="center">Debug</th>
+</tr>
+<tr class="b"><td align="right">33</td>
+<td align="right">8.01 MB</td>
+<td align="right">6,061</td>
+<td align="right">5,422</td>
+<td align="right">289</td>
+<td align="center">1.6</td>
+<td align="right">28</td>
+</tr>
+<tr class="a"><td align="right">compile: 10</td>
+<td align="right">compile: 1.17 MB</td>
+<td align="right">compile: 901</td>
+<td align="right">compile: 746</td>
+<td align="right">compile: 73</td>
+<td align="center">-</td>
+<td align="right">compile: 9</td>
+</tr>
+<tr class="b"><td align="right">test: 1</td>
+<td align="right">test: 157.69 kB</td>
+<td align="right">test: 188</td>
+<td align="right">test: 154</td>
+<td align="right">test: 20</td>
+<td align="center">-</td>
+<td align="right">test: 1</td>
+</tr>
+<tr class="a"><td align="right">provided: 22</td>
+<td align="right">provided: 6.68 MB</td>
+<td align="right">provided: 4,972</td>
+<td align="right">provided: 4,522</td>
+<td align="right">provided: 196</td>
+<td align="center">-</td>
+<td align="right">provided: 18</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section"><h2>Dependency Repository Locations</h2>
+<table class="bodyTable"><tbody><tr class="b"><th align="left">Repo ID</th>
+<th align="left">URL</th>
+<th align="center">Release</th>
+<th align="center">Snapshot</th>
+</tr>
+<tr class="a"><td align="left">jboss-snapshot</td>
+<td align="left"><a href="http://snapshots.jboss.org/maven2" class="externalLink">http://snapshots.jboss.org/maven2</a></td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+</tr>
+<tr class="b"><td align="left">flex-mojos-repository</td>
+<td align="left"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository/" class="externalLink">http://flex-mojos.googlecode.com/svn/trunk/repository/</a></td>
+<td align="center">Yes</td>
+<td align="center">-</td>
+</tr>
+<tr class="a"><td align="left">epseelon-repository</td>
+<td align="left"><a href="http://m2repo.epseelon.org/" class="externalLink">http://m2repo.epseelon.org/</a></td>
+<td align="center">Yes</td>
+<td align="center">-</td>
+</tr>
+<tr class="b"><td align="left">central</td>
+<td align="left"><a href="http://repo1.maven.org/maven2" class="externalLink">http://repo1.maven.org/maven2</a></td>
+<td align="center">Yes</td>
+<td align="center">-</td>
+</tr>
+<tr class="a"><td align="left">jboss</td>
+<td align="left"><a href="http://repository.jboss.com/maven2" class="externalLink">http://repository.jboss.com/maven2</a></td>
+<td align="center">Yes</td>
+<td align="center">-</td>
+</tr>
+</tbody>
+</table>
+<p>Repository locations for each of the Dependencies.</p>
+<table class="bodyTable"><tbody><tr class="b"><th align="left">Artifact</th>
+<th align="center">jboss-snapshot</th>
+<th align="center">flex-mojos-repository</th>
+<th align="center">epseelon-repository</th>
+<th align="center">central</th>
+<th align="center">jboss</th>
+</tr>
+<tr class="a"><td align="left">com.adobe.batik:batik-bridge:jar:3.0.0.3.0.0.477</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/batik/batik-bridge/3.0.0.3.0.0.477/batik-bridge-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://m2repo.epseelon.org//com/adobe/batik/batik-bridge/3.0.0.3.0.0.477/batik-bridge-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="b"><td align="left">com.adobe.batik:batik-css:jar:3.0.0.3.0.0.477</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/batik/batik-css/3.0.0.3.0.0.477/batik-css-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://m2repo.epseelon.org//com/adobe/batik/batik-css/3.0.0.3.0.0.477/batik-css-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="a"><td align="left">com.adobe.batik:batik-dom:jar:3.0.0.3.0.0.477</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/batik/batik-dom/3.0.0.3.0.0.477/batik-dom-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://m2repo.epseelon.org//com/adobe/batik/batik-dom/3.0.0.3.0.0.477/batik-dom-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="b"><td align="left">com.adobe.batik:batik-ext:jar:3.0.0.3.0.0.477</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/batik/batik-ext/3.0.0.3.0.0.477/batik-ext-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://m2repo.epseelon.org//com/adobe/batik/batik-ext/3.0.0.3.0.0.477/batik-ext-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="a"><td align="left">com.adobe.batik:batik-gvt:jar:3.0.0.3.0.0.477</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/batik/batik-gvt/3.0.0.3.0.0.477/batik-gvt-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://m2repo.epseelon.org//com/adobe/batik/batik-gvt/3.0.0.3.0.0.477/batik-gvt-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="b"><td align="left">com.adobe.batik:batik-parser:jar:3.0.0.3.0.0.477</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/batik/batik-parser/3.0.0.3.0.0.477/batik-parser-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://m2repo.epseelon.org//com/adobe/batik/batik-parser/3.0.0.3.0.0.477/batik-parser-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="a"><td align="left">com.adobe.batik:batik-script:jar:3.0.0.3.0.0.477</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/batik/batik-script/3.0.0.3.0.0.477/batik-script-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://m2repo.epseelon.org//com/adobe/batik/batik-script/3.0.0.3.0.0.477/batik-script-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="b"><td align="left">com.adobe.batik:batik-svg-dom:jar:3.0.0.3.0.0.477</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/batik/batik-svg-dom/3.0.0.3.0.0.477/batik-svg-dom-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://m2repo.epseelon.org//com/adobe/batik/batik-svg-dom/3.0.0.3.0.0.477/batik-svg-dom-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="a"><td align="left">com.adobe.batik:batik-svggen:jar:3.0.0.3.0.0.477</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/batik/batik-svggen/3.0.0.3.0.0.477/batik-svggen-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://m2repo.epseelon.org//com/adobe/batik/batik-svggen/3.0.0.3.0.0.477/batik-svggen-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="b"><td align="left">com.adobe.batik:batik-transcoder:jar:3.0.0.3.0.0.477</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/batik/batik-transcoder/3.0.0.3.0.0.477/batik-transcoder-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://m2repo.epseelon.org//com/adobe/batik/batik-transcoder/3.0.0.3.0.0.477/batik-transcoder-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="a"><td align="left">com.adobe.batik:batik-util:jar:3.0.0.3.0.0.477</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/batik/batik-util/3.0.0.3.0.0.477/batik-util-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://m2repo.epseelon.org//com/adobe/batik/batik-util/3.0.0.3.0.0.477/batik-util-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="b"><td align="left">com.adobe.batik:batik-xml:jar:3.0.0.3.0.0.477</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/batik/batik-xml/3.0.0.3.0.0.477/batik-xml-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://m2repo.epseelon.org//com/adobe/batik/batik-xml/3.0.0.3.0.0.477/batik-xml-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="a"><td align="left">com.adobe.commons-collections:commons-collections:jar:2.1</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/commons-collections/commons-collections/2.1/commons-collections-2.1.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://m2repo.epseelon.org//com/adobe/commons-collections/commons-collections/2.1/commons-collections-2.1.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="b"><td align="left">com.adobe.flex:compc:jar:3.0.1.1728</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/flex/compc/3.0.1.1728/compc-3.0.1.1728.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="a"><td align="left">com.adobe.flex:flex-compiler-oem:jar:3.0.1.1728</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/flex/flex-compiler-oem/3.0.1.1728/flex-compiler-oem-3.0.1.1728.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="b"><td align="left">com.adobe.flex:messaging-common:jar:3.0.1.1414</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/flex/messaging-common/3.0.1.1414/messaging-common-3.0.1.1414.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="a"><td align="left">com.adobe.flex:mxmlc:jar:3.0.1.1728</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/flex/mxmlc/3.0.1.1728/mxmlc-3.0.1.1728.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="b"><td align="left">com.adobe.flex:swfutil:jar:3.0.1.1728</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/flex/swfutil/3.0.1.1728/swfutil-3.0.1.1728.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="a"><td align="left">com.adobe.velocity:mm-velocity:jar:1.4</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/velocity/mm-velocity/1.4/mm-velocity-1.4.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://m2repo.epseelon.org//com/adobe/velocity/mm-velocity/1.4/mm-velocity-1.4.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="b"><td align="left">com.adobe.xerces:xerces:jar:2.4.0</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/xerces/xerces/2.4.0/xerces-2.4.0.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://m2repo.epseelon.org//com/adobe/xerces/xerces/2.4.0/xerces-2.4.0.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="a"><td align="left">com.adobe.xerces:xercesPatch:jar:3.0.0.3.0.0.477</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//com/adobe/xerces/xercesPatch/3.0.0.3.0.0.477/xercesPatch-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://m2repo.epseelon.org//com/adobe/xerces/xercesPatch/3.0.0.3.0.0.477/xercesPatch-3.0.0.3.0.0.477.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="b"><td align="left">commons-logging:commons-logging:jar:1.1</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="http://m2repo.epseelon.org//commons-logging/commons-logging/1.1/commons-logging-1.1.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://repo1.maven.org/maven2/commons-logging/commons-logging/1.1/commons-logging-1.1.jar" class="externalLink"><img alt="Found at http://repo1.maven.org/maven2" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://repository.jboss.com/maven2/commons-logging/commons-logging/1.1/commons-logging-1.1.jar" class="externalLink"><img alt="Found at http://repository.jboss.com/maven2" src="images/icon_success_sml.gif" /></a></td>
+</tr>
+<tr class="a"><td align="left">javax.xml.stream:stax-api:jar:1.0-2</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="http://m2repo.epseelon.org//javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://repo1.maven.org/maven2/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar" class="externalLink"><img alt="Found at http://repo1.maven.org/maven2" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://repository.jboss.com/maven2/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar" class="externalLink"><img alt="Found at http://repository.jboss.com/maven2" src="images/icon_success_sml.gif" /></a></td>
+</tr>
+<tr class="b"><td align="left">junit:junit:jar:4.4</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="http://m2repo.epseelon.org//junit/junit/4.4/junit-4.4.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://repo1.maven.org/maven2/junit/junit/4.4/junit-4.4.jar" class="externalLink"><img alt="Found at http://repo1.maven.org/maven2" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://repository.jboss.com/maven2/junit/junit/4.4/junit-4.4.jar" class="externalLink"><img alt="Found at http://repository.jboss.com/maven2" src="images/icon_success_sml.gif" /></a></td>
+</tr>
+<tr class="a"><td align="left">log4j:log4j:jar:1.2.14</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="http://m2repo.epseelon.org//log4j/log4j/1.2.14/log4j-1.2.14.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://repo1.maven.org/maven2/log4j/log4j/1.2.14/log4j-1.2.14.jar" class="externalLink"><img alt="Found at http://repo1.maven.org/maven2" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://repository.jboss.com/maven2/log4j/log4j/1.2.14/log4j-1.2.14.jar" class="externalLink"><img alt="Found at http://repository.jboss.com/maven2" src="images/icon_success_sml.gif" /></a></td>
+</tr>
+<tr class="b"><td align="left">macromedia:asc:jar:3.0.1.1728</td>
+<td align="center">-</td>
+<td align="center"><a href="http://flex-mojos.googlecode.com/svn/trunk/repository//macromedia/asc/3.0.1.1728/asc-3.0.1.1728.jar" class="externalLink"><img alt="Found at http://flex-mojos.googlecode.com/svn/trunk/repository/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="a"><td align="left">org.codehaus.woodstox:stax2-api:jar:3.0.1</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="http://repo1.maven.org/maven2/org/codehaus/woodstox/stax2-api/3.0.1/stax2-api-3.0.1.jar" class="externalLink"><img alt="Found at http://repo1.maven.org/maven2" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+</tr>
+<tr class="b"><td align="left">org.codehaus.woodstox:wstx-asl:jar:4.0.0</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="http://repo1.maven.org/maven2/org/codehaus/woodstox/wstx-asl/4.0.0/wstx-asl-4.0.0.jar" class="externalLink"><img alt="Found at http://repo1.maven.org/maven2" src="images/icon_success_sml.gif" /></a></td>
+<td align="center">-</td>
+</tr>
+<tr class="a"><td align="left">org.oleg:flex-compile-client:jar:1.0-beta</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="b"><td align="left">org.oleg:flex-compile-common:jar:1.0-beta</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="a"><td align="left">org.oleg:flex-compile-maven2-plugin:maven-plugin:1.0-beta</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="b"><td align="left">org.oleg:flex-compile-server:jar:1.0-beta</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="a"><td align="left">stax:stax-api:jar:1.0.1</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><a href="http://m2repo.epseelon.org//stax/stax-api/1.0.1/stax-api-1.0.1.jar" class="externalLink"><img alt="Found at http://m2repo.epseelon.org/" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://repo1.maven.org/maven2/stax/stax-api/1.0.1/stax-api-1.0.1.jar" class="externalLink"><img alt="Found at http://repo1.maven.org/maven2" src="images/icon_success_sml.gif" /></a></td>
+<td align="center"><a href="http://repository.jboss.com/maven2/stax/stax-api/1.0.1/stax-api-1.0.1.jar" class="externalLink"><img alt="Found at http://repository.jboss.com/maven2" src="images/icon_success_sml.gif" /></a></td>
+</tr>
+<tr class="b"><th align="left">Total</th>
+<th align="center">jboss-snapshot</th>
+<th align="center">flex-mojos-repository</th>
+<th align="center">epseelon-repository</th>
+<th align="center">central</th>
+<th align="center">jboss</th>
+</tr>
+<tr class="a"><td align="left">33 (compile: 10, test: 1, provided: 22)</td>
+<td align="center">0</td>
+<td align="center">22</td>
+<td align="center">21</td>
+<td align="center">7</td>
+<td align="center">5</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2009
+    
+          
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>

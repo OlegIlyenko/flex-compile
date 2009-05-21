@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="4.2.2" timestamp="2009-05-21T20:51:23.296">
+<file name="D:\Temp\10things\target\checkout\flex-compile-common\src\main\java\org\oleg\fcs\util\ClassLoaderUtil.java">
+<violation beginline="9" endline="9" begincolumn="1" endcolumn="24" rule="UnusedImports" ruleset="Import Statement Rules" package="org.oleg.fcs.util" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.util.Arrays'
+</violation>
+<violation beginline="14" endline="14" begincolumn="1" endcolumn="27" rule="UnusedImports" ruleset="Import Statement Rules" package="org.oleg.fcs.util" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.io.IOException'
+</violation>
+</file>
+</pmd>

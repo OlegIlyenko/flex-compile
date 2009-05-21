@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="4.2.2" timestamp="2009-05-21T20:52:36.245">
+<file name="D:\Temp\10things\target\checkout\flex-compile-server\src\main\java\org\oleg\fcs\compiler\FlexCompilerImpl.java">
+<violation beginline="11" endline="11" begincolumn="1" endcolumn="41" rule="UnusedImports" ruleset="Import Statement Rules" package="org.oleg.fcs.compiler" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.oleg.fcs.util.ClassLoaderUtil'
+</violation>
+<violation beginline="18" endline="18" begincolumn="1" endcolumn="37" rule="UnusedImports" ruleset="Import Statement Rules" package="org.oleg.fcs.compiler" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.lang.reflect.Constructor'
+</violation>
+<violation beginline="22" endline="22" begincolumn="8" endcolumn="34" rule="DuplicateImports" ruleset="Import Statement Rules" package="org.oleg.fcs.compiler" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#DuplicateImports" priority="4">
+Avoid duplicate imports such as 'flex2.tools.oem.Application'
+</violation>
+<violation beginline="23" endline="23" begincolumn="1" endcolumn="49" rule="UnusedImports" ruleset="Import Statement Rules" package="org.oleg.fcs.compiler" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'flex2.tools.oem.internal.OEMProgressMeter'
+</violation>
+<violation beginline="26" endline="26" begincolumn="8" endcolumn="41" rule="DuplicateImports" ruleset="Import Statement Rules" package="org.oleg.fcs.compiler" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#DuplicateImports" priority="4">
+Avoid duplicate imports such as 'org.oleg.fcs.project.model.Project'
+</violation>
+<violation beginline="27" endline="27" begincolumn="8" endcolumn="43" rule="DuplicateImports" ruleset="Import Statement Rules" package="org.oleg.fcs.compiler" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#DuplicateImports" priority="4">
+Avoid duplicate imports such as 'org.oleg.fcs.project.model.Component'
+</violation>
+<violation beginline="54" endline="54" begincolumn="26" endcolumn="37" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="org.oleg.fcs.compiler" class="FlexCompilerImpl" variable="libraryCache" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'libraryCache'.
+</violation>
+<violation beginline="85" endline="85" begincolumn="33" endcolumn="34" rule="UnusedLocalVariable" ruleset="Unused Code Rules" package="org.oleg.fcs.compiler" class="FlexCompilerImpl" method="sortComponents" variable="cd" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'cd'.
+</violation>
+<violation beginline="355" endline="355" begincolumn="23" endcolumn="95" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.oleg.fcs.compiler" class="FlexCompilerImpl" method="compile" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+</file>
+<file name="D:\Temp\10things\target\checkout\flex-compile-server\src\main\java\org\oleg\fcs\compiler\listener\TrayListener.java">
+<violation beginline="113" endline="117" begincolumn="16" endcolumn="9" rule="EmptyIfStmt" ruleset="Basic Rules" package="org.oleg.fcs.compiler.listener" class="TrayListener" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyIfStmt" priority="3">
+Avoid empty if statements
+</violation>
+</file>
+<file name="D:\Temp\10things\target\checkout\flex-compile-server\src\main\java\org\oleg\fcs\project\dao\impl\XmlProjectDaoImpl.java">
+<violation beginline="44" endline="46" begincolumn="19" endcolumn="17" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.oleg.fcs.project.dao.impl" class="XmlProjectDaoImpl" method="getProject" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+</file>
+<file name="D:\Temp\10things\target\checkout\flex-compile-server\src\main\java\org\oleg\fcs\runner\CompilationServer.java">
+<violation beginline="6" endline="6" begincolumn="1" endcolumn="41" rule="UnusedImports" ruleset="Import Statement Rules" package="org.oleg.fcs.runner" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.oleg.fcs.util.ClassLoaderUtil'
+</violation>
+<violation beginline="10" endline="10" begincolumn="1" endcolumn="44" rule="UnusedImports" ruleset="Import Statement Rules" package="org.oleg.fcs.runner" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.oleg.fcs.server.ConfigProperties'
+</violation>
+<violation beginline="21" endline="21" begincolumn="1" endcolumn="21" rule="UnusedImports" ruleset="Import Statement Rules" package="org.oleg.fcs.runner" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.util.Map'
+</violation>
+<violation beginline="22" endline="22" begincolumn="1" endcolumn="25" rule="UnusedImports" ruleset="Import Statement Rules" package="org.oleg.fcs.runner" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.util.HashMap'
+</violation>
+<violation beginline="37" endline="37" begincolumn="16" endcolumn="22" rule="UnusedLocalVariable" ruleset="Unused Code Rules" package="org.oleg.fcs.runner" class="CompilationServer" method="main" variable="command" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'command'.
+</violation>
+</file>
+<file name="D:\Temp\10things\target\checkout\flex-compile-server\src\main\java\org\oleg\fcs\server\CompillerServer.java">
+<violation beginline="4" endline="4" begincolumn="1" endcolumn="43" rule="UnusedImports" ruleset="Import Statement Rules" package="org.oleg.fcs.server" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.oleg.fcs.project.dao.ProjectDao'
+</violation>
+<violation beginline="5" endline="5" begincolumn="1" endcolumn="42" rule="UnusedImports" ruleset="Import Statement Rules" package="org.oleg.fcs.server" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.oleg.fcs.project.model.Project'
+</violation>
+</file>
+<file name="D:\Temp\10things\target\checkout\flex-compile-server\src\main\java\org\oleg\fcs\ui\FileViewer.java">
+<violation beginline="26" endline="26" begincolumn="27" endcolumn="30" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="org.oleg.fcs.ui" class="FileViewer" variable="conf" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'conf'.
+</violation>
+</file>
+</pmd>
