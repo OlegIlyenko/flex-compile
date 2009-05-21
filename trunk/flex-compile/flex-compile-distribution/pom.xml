@@ -26,6 +26,7 @@
         <dependency>
             <groupId>org.oleg</groupId>
             <artifactId>flex-compile-maven2-plugin</artifactId>
+			<type>maven-plugin</type>
             <exclusions>
                 <exclusion>
                     <groupId>org.apache.maven</groupId>
@@ -76,7 +77,7 @@
                 <executions>
                     <execution>
                         <id>make-assembly</id>
-                        <phase>install</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>single</goal>
                         </goals>

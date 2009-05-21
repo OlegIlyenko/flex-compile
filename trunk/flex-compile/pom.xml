@@ -111,7 +111,8 @@
             </dependency>
             <dependency>
                 <groupId>org.oleg</groupId>
-                <artifactId>flex-compile-maven2-plugin</artifactId>
+				<artifactId>flex-compile-maven2-plugin</artifactId>
+				<type>maven-plugin</type>
                 <version>${project.version}</version>
             </dependency>
 
