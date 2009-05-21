@@ -1,0 +1,152 @@
+<!-- Project root element. defaultLocales is optional attribute and specifies comma separated list of locales -->
+<flex-project defaultLocales="de_DE, en_US">
+
+    <!-- Project name -->
+    <name>Test flex project</name>
+
+    <!--
+        Path to the default Flex configuration file. Will be applied to all modules of the project.
+        If path is relative, then it would be relative to the project root directory.
+        By default file flex-config.xml would be search in the project's
+        root directory
+    -->
+    <default-flex-config>/path/to/flex-config.xml</default-flex-config>
+
+    <!--
+        Default themes definitions. Would be used across all of the
+        applications untill it would be overriden in the application level.
+    -->
+    <default-themes>
+        <theme>
+            <!--
+                Theme type. Available values:
+                    * builtin - one of the built in themes situated in the
+                                $FLEX_HOME/frameworks/themes directory. Name
+                                would represent the theme name (subdirectory name).
+                    * component - one of the components is the theme. Name represents
+                                  component name.
+                    * lib - one of the libs of application or one of it's dependent
+                            components if theme. Name represents the file name of the library.
+                    * file - theme situated in the file. Name represents path to the
+                             file. If path is relative, it would be resolved
+                             strting from the application module root directory.
+            -->
+            <type>builtin</type>
+            <name>Smoke</name>
+        </theme>
+        <theme>
+            <type>component</type>
+            <name>my-theme</name>
+        </theme>
+    </default-themes>
+
+    <!--
+        Component definition. You can define as many components as you want. Component encapsulates Flex library.
+         locales is optional attribute and specifies comma separated list of locales. They would be set during compilation.
+    -->
+    <component locales="de_DE, en_US">
+
+        <!-- Component name -->
+        <name>component1</name>
+
+        <!--
+            Path to the Flex configuration file. Will be passed to the compiler during this module compilation.
+            If path is relative, then it would be relative to the module root directory.
+            By default file flex-config.xml would be search in the component's
+            root directory
+        -->
+        <flex-config>/path/to/flex-config.xml</flex-config>
+
+        <!-- Component's dependencies within current project -->
+        <dependencies>
+            <!-- The name of another component or application on which current component depends -->
+            <dependency>component2</dependency>
+            <dependency>...</dependency>
+            <dependency>...</dependency>
+        </dependencies>
+    </component>
+
+    <component>
+        <name>my-theme</name>
+    </component>
+
+    <component locales="en_US">
+        <name>my-resource-bundle-en_US</name>
+    </component>
+
+    <component locales="de_DE">
+        <name>my-resource-bundle-de_DE</name>
+    </component>
+
+    <component>
+        ...
+    </component>
+
+    <!--
+        Flex application. at can contain any number of Flex applications and module.
+        locales is optional attribute and specifies comma separated list of locales. They would be set during compilation.
+    -->
+    <application locales="de_DE, en_US">
+
+        <!-- Application name -->
+        <name>application</name>
+
+        <!--
+            Path to the Flex configuration file. Will be passed to the compiler during this module compilation.
+            If path is relative, then it would be relative to the module root directory.
+            By default file flex-config.xml would be search in the application's
+            root directory
+        -->
+        <flex-config>/path/to/flex-config.xml</flex-config>
+
+        <!--
+            Themes definitions. Overrides defult themes. Ths set of themes would be applied
+            to all applications in current module.
+        -->
+        <themes>
+            <!-- Theme definition. The same as in the default-themes section -->
+            <theme>
+                <type>builtin</type>
+                <name>Smoke</name>
+            </theme>
+            <theme>
+                <type>component</type>
+                <name>my-theme</name>
+            </theme>
+        </themes>
+
+        <!-- Application artifacts -->
+        <artefacts>
+
+            <artefact>
+                <!-- Module MXML file that should be located in the application/mxml/ folder -->
+                <fileName>module.mxml</fileName>
+                <type>module</type>
+            </artefact>
+
+            <artefact>
+                <!-- Applocation MXML file that should be located in the application/mxml/ folder -->
+                <fileName>App.mxml</fileName>
+                <type>application</type>
+            </artefact>
+
+            <artefact>
+                <!-- External CSS that should be compiled. File would be located in the application/css/ folder -->
+                <fileName>Theme.css</fileName>
+                <type>css</type>
+            </artefact>
+
+            <artefact>
+                ...
+            </artefact>
+        </artefacts>
+
+        <!-- Application dependencies within the project -->
+        <dependencies>
+            <dependency>component1</dependency>
+            <dependency>my-theme</dependency>
+        </dependencies>
+    </application>
+
+</flex-project>
+
