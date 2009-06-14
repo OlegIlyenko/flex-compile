@@ -5,6 +5,8 @@
 
   * Document Java API Usage
   * Support of RSL (Runtime shared library)
+  * Ability to provide relative path to the component or application module / or add another project to the current
+  * ability to add relative source path in module definition
 
 ==Change Log :==
 
